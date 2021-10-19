@@ -39,7 +39,7 @@ Para cuantificar la diversidad biológica se pueden utilizar muchos índices. En
 + Listado de especies existente en esa comunidad.
 + Abundancia de cada especie en dicha comunidad.
 
-La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla aquí y descargarla aquí para Windows y aquí para Mac. Y aquí la tienes en formato pdf.
+La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/p/zphobtzmub50/?present=1) y descargarla aquí para Windows y aquí para Mac. Y aquí la tienes en formato pdf.
 
 
 
