@@ -142,7 +142,27 @@ La siguiente presentación muestra paso a paso el flujo de trabajo. También pue
 
 
 ## Resultados esperables
-poner mapita con los resultados y pensar algo para discutirlo. identificar patrones
+El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de un fichero de formas vectorial en el que se ha asignado el valor del índice Shannon a cada polígono del mapa de vegetación inicial. Aquí se puede descargar dicho fichero de formas.
+
+
+
+![shannon](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/imagenes/shannon_snev.png)
+
+
+
+En el mapa resultante se pueden identificar varios patrones de distribución espacial de la biodiversidad en Sierra Nevada. Durante la práctica reflexionamos sobre dichos patrones:
+
++ ¿Cómo cambia la diversidad al aumentar la altitud?
+
++ ¿A qué se puede deber dicho patrón?
+
++ ¿Crees que se repetiría el mismo patrón en otras montañas de la Tierra?
+
++ ¿hay algún patrón de cambio de diversidad en dirección este-oeste?
+
++ En caso afirmativo, ¿a qué puede deberse?
+
+  
 
 ## Vídeos de las sesiones
 
