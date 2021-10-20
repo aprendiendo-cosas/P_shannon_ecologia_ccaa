@@ -37,7 +37,7 @@ Para cuantificar la diversidad biológica se pueden utilizar muchos índices. En
 + Listado de especies existente en esa comunidad.
 + Abundancia de cada especie en dicha comunidad.
 
-La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/p/zphobtzmub50/?present=1) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_shannon.exe) para Windows y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_shannon.zip) para Mac. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_shannon.pdf) la tienes en formato pdf.
+La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/p/zphobtzmub50/?present=1) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2020-2021/presentacion/1_mapa_biodiv_shannon.exe) para Windows y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_shannon.zip) para Mac. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_shannon.pdf) la tienes en formato pdf.
 
 
 
