@@ -1,8 +1,8 @@
 # Instrucciones para realizar la práctica denominada "Construcción de un mapa de diversidad de Sierra Nevada"
 
 
-> + **_Versión_**: 2020-2021
-> + **_Asignatura (grado)_**: Ecología (Ciencias ambientales). Curso 2020-2021
+> + **_Versión_**: 2021-2022
+> + **_Asignatura (grado)_**: Ecología (Ciencias ambientales). Curso 2021-2022
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
 > + **_Duración_**: 3 horas.
 
@@ -12,7 +12,7 @@
 
 Esta práctica tiene los siguientes objetivos:
 + Disciplinares:
-  + Reconocer el concepto de biodiversidad ya estudiado en las clases de teoría.
+  + Reconocer el concepto de biodiversidad que veremos en las clases de teoría.
   + Aprender un método para cuantificar la diversidad biológica. Índice de Shannon.
   + Aprender a generar mapas de diversidad biológica. Mapas de distribución del índice de Shannon.
   + Reconocer patrones de distribución de la diversidad en un territorio concreto (Sierra Nevada).
@@ -29,7 +29,7 @@ Esta práctica tiene los siguientes objetivos:
 
 ## Contextualización ecológica
 
-Esta sesión práctica está muy relacionada con el Tema 6 de teoría ([Comunidades. El concepto de diversidad](https://rawcdn.githack.com/aprendiendo-cosas/Te_comunidades_diversidad_ecologia_ccaa/2020-2021/guion_comunidades_diversidad.html)). En concreto, usaremos los conocimientos adquiridos en esa sesión para construir un mapa de biodiversidad de Sierra Nevada. Esto quiere decir, que debes de repasar dichos conceptos con objeto de que el aprendizaje de esta práctica sea realmente efectivo...
+Esta sesión práctica está muy relacionada con el Tema 4 de teoría ([Comunidades. El concepto de diversidad](https://rawcdn.githack.com/aprendiendo-cosas/Te_comunidades_diversidad_ecologia_ccaa/main/guion_comunidades_diversidad.html)). En concreto, usaremos los conocimientos adquiridos en esa sesión para construir un mapa de biodiversidad de Sierra Nevada. Esto quiere decir, que debes de repasar dichos conceptos con objeto de que el aprendizaje de esta práctica sea realmente efectivo.
 
 Para cuantificar la diversidad biológica se pueden utilizar muchos índices. En nuestro caso usaremos el denominado índice de Shannon-Wiever, que es uno de los más robustos y comunmente utilizados. Para su cálculo se necesita la siguiente información:
 
@@ -164,11 +164,12 @@ En el mapa resultante se pueden identificar varios patrones de distribución esp
 
   
 
-## Vídeos de las sesiones
+## Evaluación de la sesión según los estudiantes
 
-Lamentablemente en esta ocasión no grabé las sesiones. Así que tenemos que conformarnos con versiones similares de esta práctica en otros años y en otras titulaciones. Ahí va la misma práctica pero impartida para alumnos de tercer curso de biología:
+Aquí puedes ver los resultados que, por ahora, arroja [esta](https://docs.google.com/forms/d/e/1FAIpQLScbCKaNkzzjV5bH0yek41FO-KS7LtLhT_ilITS_ZR0Z2XJyCA/viewform?usp=sf_link) encuesta sobre grado de satisfacción de los objetivos planteados. Por favor, rellénala si no lo has hecho ya. Se tardan 10 segundos y sus resultados son de gran utilidad para mejorar los contenidos cada año. Gracias.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6OOusJU4ljs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<img src="https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/imagenes/cumplimiento_objetivos.png" alt="image" style="zoom:50%;" />
 
+<img src="https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/imagenes/desempenio_profesor.png" alt="image" style="zoom:50%;" />
 
-
+Además, un estudiante dejó el siguiente comentario en el apartado de "sugerencias":
