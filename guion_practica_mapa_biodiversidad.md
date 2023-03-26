@@ -36,7 +36,7 @@ Para cuantificar la diversidad biológica se pueden utilizar muchos índices. En
 + Listado de especies existente en esa comunidad.
 + Abundancia de cada especie en dicha comunidad.
 
-La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/view/ACfMCVaCBbJVoGwMJZaY) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2021_2022/presentacion/1_mapa_biodiv_shannon.exe) para Windows y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2021_2022/presentacion/1_mapa_biodiv_shannon.zip) para Mac. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2021_2022/presentacion/1_mapa_biodiv_shannon.pdf) la tienes en formato pdf.
+La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/view/ACfMCVaCBbJVoGwMJZaY) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_ecologia_ccaa.exe) para Windows y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_ecologia_ccaa.zip) para Mac. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_ecologia_ccaa.pdf) la tienes en formato pdf.
 
 
 
@@ -50,19 +50,19 @@ La siguiente presentación muestra los conceptos básicos necesarios para hacer 
 Como se puede observar en la presentación anterior, para calcular la diversidad de una comunidad, necesitamos dos fuentes de información:
 + Información de distribución de especies en la zona de estudio (Sierra Nevada). Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada [GBIF](https://www.gbif.org/) (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/geoinfo/csv_gbif_sierra_nevada.zip) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada en el mismo formato en el que se obtienen de GBIF. Para usar estos datos en la práctica debemos de importarlos en QGIS y convertirlos en un fichero de formas. Para ahorrarnos este paso y que la práctica fluya un poco mejor, ya he hecho yo este paso. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/geoinfo/ocurrencias_sierra_nevada_23030.zip) puedes descargar el shapefile de puntos que usaremos. Como ves más abajo, son unos cuantos miles de puntos...
 
-![puntos](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2021_2022/imagenes/puntos.png)
+![puntos](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/imagenes/puntos.png)
 
 
 
 + Distribución de las comunidades ecológicas que conforman Sierra Nevada. Este paso es el más complejo conceptualmente, ya que las comunidades no tienen un límite espacial preciso. Es decir, están conectadas entre sí y no es fácil delimitar donde empieza una y acaba otra. Usaremos un mapa de vegetación para delimitar las comunidades de Sierra Nevada. Asumiremos que cada polígono de dicho mapa es una comunidad ecológica. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/geoinfo/vegetacion_snevada_23030.zip) puedes descargar el mapa de comunidades que usaremos en esta práctica. El enlace anterior contiene un fichero de formas con la delimitación de los polígonos del mapa de vegetación a escala 1:10.000. La siguiente figura muestra la delimitación de estas comunidades en Sierra Nevada. Aunque el mapa no tiene escala, podrás reconocer el contorno del espacio protegido de Sierra Nevada.
 
-![comunidades](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2021_2022/imagenes/comunidades.png)
+![comunidades](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/imagenes/comunidades.png)
 
 
 
 A partir de estas dos fuentes de datos obtendremos el índice de Shannon para cada una de las comunidades de Sierra Nevada. Es decir, usaremos los datos de presencia de cada especie que hay en cada una de las comunidades para calcular su índice de Shannon. En la siguiente figura puedes ver la distribución de ocurrencias de especies en unas cuantas comunidades.
 
-![puntos_comunidades](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2021_2022/imagenes/puntos_sobre_comunidades.png)
+![puntos_comunidades](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/imagenes/puntos_sobre_comunidades.png)
 
 
 
@@ -80,7 +80,8 @@ El flujo de trabajo anterior se realiza ejecutando secuencialmente las líneas d
 #Este script calcula el Indice Shannon de Sierra Nevada
 # usando la información existente en GBIF y un mapa de vegetación a escala 1:10.000
 
-## Establece directorio de trabajo. Recuerda cambiarlo por el tuyo.
+## Establece directorio de trabajo. Recuerda cambiarlo por el tuyo. Si trabajas en Windows ten en cuenta que cuando copies la ruta de la carpeta, pondrá las barras hacia la izquierda (/). Tienes que cambiarlas a mano y ponerlas hacia la derecha (\)
+
 setwd("/Users/fjbonet_trabajo/Google_Drive/4_docencia/eco_ccaa_uco/actos_docentes/P_shannon_ecologia_ccaa/preparacion")
 
 ## Carga paquetes que necesitamos
@@ -149,7 +150,7 @@ El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de u
 
 
 
-![shannon](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2021_2022/imagenes/shannon_snev.png)
+![shannon](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/imagenes/shannon_snev.png)
 
 
 
@@ -166,5 +167,18 @@ En el mapa resultante se pueden identificar varios patrones de distribución esp
 + En caso afirmativo, ¿a qué puede deberse?
 
 + Hemos identificado una serie de patrones visualmente. ¿cómo crees que podríamos cuantificarlos y comprobar si realmente existen?
+
+
+## Entrega a realizar
+Una vez que hayas generado el mapa de diversidad de Sierra Nevada, haz click aquí y descarga este fichero de formas (shapefile). Contiene varios polígonos distribuidos en un gradiente de latitud desde Alaska hasta Colombia. Cada polígono muestra (en el campo H de la trabla de atributos), el promedio de la diversidad de todas las comunidades que hay en su interior. Para ver bien esto haz lo siguiente:
++ Despliega el shapefile anterior en un proyecto nuevo de QGIS. Asigna a cada polígono un color en función de lo valores del índice de Shannon (Campo H).
++ Instala un plugin llamado *Quick map services*. Te permitirá mostrar servicios de cartografía de todo el planeta. Cuando lo instales, verás que aparecen dos botones nuevos. Selecciona el de buscar y localiza el servicio llamado *Google satellite*. Cárgalo para ver la zona del mundo a la que se refiere la capa anterior.
+
+Una vez hecho esto, contesta de manera razonada a las siguientes preguntas:
++ ¿Puedes ver un patrón espacial en la distribución de la diversidad? En caso afirmativo, ¿cuál es?
++ ¿a qué crees que se debe el mencionado patrón de distribución? Enumera y describe las razones físicas o biológicas que crees que justifican el patrón observado.
++ ¿Qué relación hay entre el patrón que has identificado y el que hemos visto al subir en altitud en Sierra Nevada?
+
+
 
   
