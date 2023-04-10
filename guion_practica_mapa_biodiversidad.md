@@ -80,7 +80,7 @@ El flujo de trabajo anterior se realiza ejecutando secuencialmente las líneas d
 #Este script calcula el Indice Shannon de Sierra Nevada
 # usando la información existente en GBIF y un mapa de vegetación a escala 1:10.000
 
-## Establece directorio de trabajo. Recuerda cambiarlo por el tuyo. Si trabajas en Windows ten en cuenta que cuando copies la ruta de la carpeta, pondrá las barras hacia la derecha (/). Tienes que cambiarlas a mano y ponerlas hacia la izquierda (\). También has de cambiar (si trabajas en Windows) las comillas dobles (") por las sencillas (')
+## Establece directorio de trabajo. Recuerda cambiarlo por el tuyo. Si trabajas en Windows ten en cuenta que cuando copies la ruta de la carpeta, las barras tienen que ir hacia la derecha (/). También has de cambiar (si trabajas en Windows) las comillas dobles (") por las sencillas (')
 
 setwd("/Users/fjbonet_trabajo/Google_Drive/4_docencia/eco_ccaa_uco/actos_docentes/P_shannon_ecologia_ccaa/preparacion")
 
