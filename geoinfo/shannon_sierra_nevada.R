@@ -1,7 +1,7 @@
 # Este script genera un mapa del índice de Shannon a partir de los datos de presencias de especies existentes en GBIF y de un mapa de vegetación de Sierra Nevada
 
 # 1. Establece directorio de trabajo
-setwd("/Users/fjbonet/Library/CloudStorage/OneDrive-UniversidaddeCórdoba/4_docencia/SIG_II_geoforest_UCO/repos_actos_docentes/P_shannon_SIG_II_Geoforest/preparacion")
+setwd("/Users/fjbonet_trabajo/Library/CloudStorage/OneDrive-UniversidaddeCórdoba/4_docencia/eco_ccaa_uco/actos_docentes/P_shannon_ecologia_ccaa/preparacion/borrar/csv_gbif_sierra_nevada")
 
 # 2. Instalar y cargar los paquetes necesarios
 install.packages("sf")
@@ -14,19 +14,19 @@ library(sqldf)
 presencias <- read.csv("0118822-200613084148143.csv", header = TRUE, sep ="\t", dec = ".")
 
 # 4. Convertimos la tabla importada a un objeto geográfico tipo sf
-presencias_geo <- st_as_sf(presencias, coords = c("decimalLongitude", "decimalLatitude"), crs = 4326)
+presencias_geo <- st_as_sf(presencias, coords = c("decimalLongitude","decimalLatitude"), crs = 4326)
 
 # 5. Reproyectamos la capa creada al sistema de coordenadas 23030 (UTM)
 presencias_geo_23030 <- st_transform(presencias_geo, crs = 23030)
 
-# 6 CAMBIAR READOGR POR EL QUE PROCEDA Importamos la capa con la delimitación de las comunidades ecológicas.
-comunidades<-readOGR(dsn=".",layer="vegetacion_snevada_23030", verbose = FALSE)
+# 6 Importamos la capa con la delimitación de las comunidades ecológicas.
+comunidades<-st_read("vegetacion_snevada_23030.shp")
 
 # 9. Asignamos a cada punto de presencia el código del polígono del mapa de vegetación en el que está. Unión espacial.
 presencias_x_comunidades <- st_join(presencias_geo_23030,left = FALSE, comunidades)
 
 # 10. Extraemos la tabla de atributos de la capa de puntos creada y borramos todos los campos menos los dos que nos interesan. 
-bio <- as.data.frame(presencias_x_grid)
+bio <- as.data.frame(presencias_x_comunidades)
 bio <- bio[c('OBJECTID', 'scientificName')]
 
 # 11. Calculamos el número de individuos por especie y por polígono (num_ind_sp_pol)
@@ -51,4 +51,4 @@ T_Shannon<-sqldf("SELECT OBJECTID, sum(lnpi_pi)*-1 H FROM T_num_ind_sp_pol_mas_n
 comunidades<-merge(x = comunidades, y = T_Shannon, by.x = "OBJECTID", by.y = "OBJECTID")
 
 # 18. Exportamos la capa de comunidades a un fichero de formas para visualizarlo en QGIS.
-st_write(comunidadds, "Shannon_sierra_nevada.shp", append=FALSE)
+st_write(comunidades, "Shannon_sierra_nevada.shp", append=FALSE)

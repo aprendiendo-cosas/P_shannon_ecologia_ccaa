@@ -68,74 +68,74 @@ A partir de estas dos fuentes de datos obtendremos el índice de Shannon para ca
 
 Para ello seguiremos los pasos que se muestran en el siguiente flujo de trabajo (se ve un poco pequeño, pero si vas a la parte de abajo encontrarás una herramienta lupa para aumentar y otra para desplazarte). También puedes descargar el flujo de trabajo [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2022_2023/presentacion/sierra_nevada_shannon_QGIS_R.drawio.zip) (se abre con [esta](https://www.diagrams.net/) aplicación).
 
-<iframe frameborder="0" style="width:100%;height:2815px;" src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&layers=1&nav=1&title=sierra_nevada_shannon_QGIS_R.drawio#R7V3rc%2BK2Fv9rmGnvTBi%2FbT4m5NHt3d5ul73dbr9khC1AXWNT2yShf30lWfJLApxgYxPobIkt%2BXl%2BOk%2BdIw%2F08fLlIQKrxS%2BhB%2F2BpngvA%2F12oGmmgn%2FI%2Fibd1yyNtcwj5KVthYYJ%2BgemjSpvXSMPxqwtbUrC0E%2FQqtzohkEA3aTUBqIofC4fNgt9r9SwAnNYegzSMHGBD4XDviIvWaStjmbn7T9BNF%2FwO6vWKO2ZAvf7PArXAbvfQNPvzXvjnl1wCfi12H3jBfDC50KTfjfQx1EYJunW8mUMfULaMtnut%2FRmzx3BIKlzwld94v%2FuzaI%2FN5vw%2B%2Birc2O%2BGFcWe80n4K8hfw%2F6tMmGU4i%2BIyRXUQf6zfMCJXCyAi7pfcZDArctkqXPumdhkDCQHbwb4gNRQsaGoZBe5Pvj0A8jemXdA9CZubg9TqLwOyz0WK4DpzPcI74le%2FEnGCXwpdDE3voBhkuYRBt8CO9VbSM9h43RK7b7nONtqIwQiwLWpq0NTTbS2CibZ1fPKY03GLFfQ3irXcJXKD2bQcuVUtqzR1NFEaFqhPCmXSa8OnJ0gfamIqG9OrKUw0mvPc4c%2F3ljJT%2F%2F%2Fdufjj25%2Bfb5H45%2BgdDQwyKB7YZRsgjnYQD8u7z1JoeCkio75mMYrhgAf8Ek2TAEwDoJy%2FBgKkabP8j5eEix3W%2FFvtsXdvF0b8P2CrDau1CJw3Xkwh1vzQZyAqI5THYcx7AgJNmJcQR9kKCnshRtHCtzP5eAeJXqhRl6IQjdrGCE8N0hGeD4FliRwE95UxEU4KN5gLddTE3al8loQnoPxIsM8phwRzD%2FQuHWcQNaUsXC%2F96i5Ry%2FoY%2Bm%2BBe4hDKPHorwk4WEDPfPcPoYwwgzzzB%2Bmr8C2Fewm%2BaoQ6Ms6mxLlHW6JrKb0Raz2WYX3FYRhm%2FnGrsm1xj9YhtRq9%2FC2MUvAXBr6K4jTAkX4dtqygTBKCLN%2F4NPwAOiElqEy%2Bk6fpUCamxAW%2BaQK0o2oC3LFAa0pQ9NSxzTfOg3T90auptYhqv6NMjsWzDlV1D20Ea3q8xu2CKzq9z8LCnX1nQrly27SIOF7IpsYrokCPifyVsHc8r4heEkG21lGlUNyiAMyDUSKiNIpw9nCduchkkSLtlOxChBhQuGYuZTmb9AngcDmY2k0P%2Bkg3r3ANk%2F1Bl0jiKOaglwrYlpXb%2Fg9ircXsog9QRGo4Y7x2FkcOzDLsa6j8t1JcUyASig1pVK930frGKUY%2BsukO99BJtwnfDb8L39SqIhXNQyLlwsFQWjIhOMmtMWMk67DFYFwYvC1RdutZCGVYiIkXv3hEkdN8WF9KKUVOYN%2FocpOib%2BjYnfZoz31Xwf%2FyOHR8k4DDCf4hFErgFBnDzDOKk%2FFLIRvn8o7AO7NevLGAlY3xEnBcFWZapMJB6M8F5LevdofxVKXAkdBSQeuCyAhC3zC0DbJKouBm5045h4qSJeYTC%2FALbVNLFFwI7KYC27AheNt82Z4JDuVYBaW9CL3oTaKPY9ZtRs2B%2Bu%2BlqDxxDgIQbyWAyMXzB6pfZrDTIxEG4PRxe8DlV%2BreFVI0R4UX5tKD9D5NTjen%2BmGIM5H%2BVXP1DTmVkqBmKo8jsfYfrqYFrnrp8YT8E8Nr5wVW99P0sMrlzU31HUn2S%2B%2F7jqzxLjNM1i32NGzYZ9f9WfJUZldPWc1N8rMOqJ%2BrPEaAq%2B%2FVi%2FINZb9ScGWC7q7yjqzxGzg44b%2BrTEQM35qD%2BjNlxdxWUkadc68SXELMULRj0JfUpKFIi%2FfuGq3gY%2FrUuuS0fqT1VE6I%2Fs%2FomxmvMxVPuf9WKLgRmSjHhG7t%2FJJb7YYkCFyBrnglhf3T9bjLEMNMvn%2Ba8l1Ky%2F1yHvuIopca7xAebqJe%2FDW3Py99escAMf4UH8A9O0QlLHgSHSlHVAuv4J6Z8Y%2BtB1Ed4hZR3p%2FfH7pI%2BQXlEYQ%2BXKmz0VH9vzrSnS7KqSQtWGk3z3KTue%2Fds40Dzd%2B8ilhC8oKVQS4r1v7GJkO68jJDu8jLCB8sMDC6nqVlLZTBX1pJLK6aRa9Phkd7Rekd0Wnb4PS2JSgwi3jie%2Fk5vi%2F397%2BDARhViXJWu2UJalS8qyjGNWhdiirXAaFc8Hjn2trsjpV%2FGmY120Sl2IR3XFm9kriG3RSx6DVWbWrdZBEhKjDhvm%2BNenhbrlsl163MPNh%2FtdbgDwfeiH8wgsB%2BWy%2BFJfsTh%2Bn8AkJfYMuRoWYA2IXyNaxYpXrW7Fa2sFr1xvFpH8PEmN%2BK8PE4n5gF83KVNVWIaAEAW5wL9mHUvsgqVcDrGLUHDTyjEpEnYijB3nALUAg64LqwzojgiDrO5Raw2FTjRcY2LMqbs4h9OZppIvYtMF1Zsls%2Fy9%2BqUtHHFO8e4lM4aJ1pj89KnvVrDatRXsiC5FJqnvPk0e8B%2Bsv3TRpX%2BHAluVCGynJYEt5TBVnBR4Zy6J%2FLX5Cnd7JZDaK0HPn1vujpcs0zTOOI3yEGPagnhDBIH368Pn7UdOeYNqFsKWU%2BEw4UR8FNoe2exUHCp8ITm%2BEtpIjF3K1rDhbY0jqnUSuqww0lt8zrczn1WX%2BdTOQpDyx%2BlkCa2CrDSssrQcKqr9OolJOwt%2B5oFIqlZdMdpZVHPnc0vFaFWqLdOAwBPEj96oVHXeiVQ1zPLSYJmFV5Sp0mU925KpYkXKu5epkhjrKchUXlHaLVQFEetYRRGrDEfZ%2FhYJKxWpHHy1CH02EDoDn6%2B10hz49NTrKAKbwgHMucqv%2FIk0FCSGyZ3LbD1aQysOpTpnmGwljq2nGM5o9yl4I33yLRew%2BFIn%2BVPqZUqkyLDzdj6%2BZWx5luxaKXjCtShXZcgcIBPP1NGTTEzIeahx1jjMQhEnJq5jNA%2BySJNoJ7g0vaTgBJK38aX2BFgSqyCYxuQPfg42jeGTU9xwuQ6QBzzxTBjwg%2F5ep1kvyWCsD67VYQ3DiGQy1bCKCEXfhVWkaxWJpevWUKyKcFTRMHLaGlVa1x7MIULgyAaVUlNwaEavBAf%2FXsJJQvx2uDgK%2B%2BGy%2BgWXWKF295JEgMhKhSSCAlH0UVkNkghN1%2BnsNG0oT0uTiWXSuIIRVRnpBDZ%2BIMn1BBksyG7ylDJxKxPUvRLBlc8emJYY7bMNLpWLIjhvbR5yMcf7LDi0bqyIL%2F3aEw7VT1lnHgEuntHdE7g0MbQ3RaEoll6TX139pEshqVprRE7pzlCrzEtkn28qBtE0UVDpbc0M6p0E0bof907dcd8vh1ETa%2F3GwHfXPlX%2FwWCsDW7IDDsKPPSEvHUonyIseYarkJyLN8mwxOQMo93%2BoWA3TH77WNdzq7qBo11uYLwCQWlo8goNN82AIy8azafgB4V6ypiiinTrR7JJLqvQso8ZWCJ%2Fk56%2BDIMwphKhdEheGaLIKkNK32YzMXz4J%2F20WLbH4TQpoLjllmyTRzIJgCYeBfuOVbNj%2BRB%2F02W0%2FDLpqMl6MhPUzIxQMzUzzZLlmTeWrE%2BT259mboGazAY1uRXKb52CmN2a24u4oSiWST8VzKSdygvSotLdjPdJk02bCm%2BWiuE6tMu6MrLlXGwSaZ0fSS1Lfp1N3pFamLwjFd1ZZ2pT8k4mxLf0UjKynnnhKarQ0t0M32JjedSx44ThmfFYylI9NOIzDcc1o22K00sjVWbE563Na8d3n8q%2FU%2Bnt1479crP5c0sqAZFUkVSEvS0T9l8eg%2FXyESvUx3j1iNVivZDkAYZnM%2BzklNnJMSQ%2BsSQDpj1DUztPVtLrslK%2FAoySLxQ1ZGge077UtZO0LyUa%2FGJgXgzMi4F5SPRlVJmb74eBeZ5RYr3uPE7fDEzZSoPNGZinYl0aitYz69I4zzCmXjd8b%2FQrjKmL4fv%2FBygaMDOBTG1KZjCxMfFEM1FG6XQouY2LLcwwtSdJ1811IJ73w7bclx%2FbNT631FP0SSmqFaU4knxS8%2BhK0TjPJDajbtSFZVH2hZmN7VGXrR5WHb0osGI1EvO4BPF%2B3VnTNO06YOOY1ZolVZHkMaiGI%2BPG9hTrec6Lcxbbz4v9Ctvw55aHbT6hQTrH54dzjey0qf2cNDpibMn07LMWVFVJveDx1eB55vgZdX1Do1%2B%2BobHdN7yowUPUoGb3QA2eZ5zGqO1f9iubzxD9y8l6yXTgfz4y7SeprgDzCM5B4BGXkk5UCOUXR5m3EC5lnGhqrqBZDUnC29E1q3me0SKjbtJb8wWEh3GzbIH7djTrZAGCIAxOWYXqmj20qzrUVES248WKR1Gg%2FCPIZ8ZyZt2Yjtmv%2FGpTjOlc0%2FiqCjwapy0WJyJBOcJ4CweV8gFkZYuVoG5azkLuReK%2Bt4GHXMnyDDS0m7Nu6SY19PQSRvmiD1K9LJybqVvipPVcCRuGIdjUlmTC5vhquJuVVzuXCXVTgvhXyPsiE8SUoBLDV6A85sKobZduGFweZgxk6yIDyZZ0a0%2BhnmdqKueJ%2FczTr7U7%2BXPvWFSS8MsM%2BXWWH3qOMHvsXH9op3tpKiehtKrFUqojmRA5vtYSF7YUPf%2FUFqHRuRjBKAKPAXwCHhjGi1WtFI8OpWcj8KnCIphX6siUBPJMe6hqR5Sb0m9lvyofVJ4OuiMJNDNJB5quGwQL6D9BsoKp0DPYkibqEP%2B12PXMaEU6jfQ5aKePxTeMrkjOKQrmaX8QRkvgZ4eQBVav2JqqpJstq1rqRlhNBEkhRbXYmUQgiGf4ovzyQZ7e%2BhxGXvnuxdOnwP0%2Bp0roqkJTjTj5jJYaibbybbNAWQ%2FFKx8wqqLAR4Ubz%2FwQJMUH2uvtl3JNDXRw7PzEWVZXNSFuYPDy0NI3fyQfd2piGeGdq0gW2LWEW38waNzo1LjBnXttMvUnkZ1tqT7J18zPxgPgM%2BtdgPHpow%2F%2FCG5nSvw8%2Fssef3Dc%2BO7qpGLYbzf4rboGP180uScGv%2BTL1AXBVbYKH%2BlK6Klt%2BI55CJsxVaOQU6moX%2Fj3k5rmoi%2Ffru7uRt9%2B1sDE2Pz3a%2Fzx%2B68frkT1Iv3GVVeL0qtVINQmgDCVsp4XQZB9TqQJk1yKgahVPr93APgXibg2oZ9Fr2Cgt4SBVJtop6RN6sYbispF%2BtaSSKz0uM6S%2FHY99a7vfQPypVLyRlTGV%2FQFvgVaxbCoKXbxFVZBHv00LSG9B%2BJFBjnz875QuHXiWy0BoRD%2Fe4uWc%2FyGPpriX%2BASyjx6KMJPFhIy3D%2FD6WMMI8w4w%2Fhp3lIgyVKqbo0tMd14eXLTTo3cdOvadjMstcRvQ0Ub7eE5%2BOY15Xdx1F7O4x%2Bd7QnriTl%2BtzB28UuQCG5hCfkEMwadL9VJRAkT%2B1pVhgqfhO9vjNWSFEVakviq3RZriFaz9Kt7RzUHmqB1Vg7HCO1wGVCUQRLDV3VaIrSYIff57vbD9S%2BnT2rDKBtXjiJ%2BfUn2oYLWSM3j26dhXL1dpnNZvd9V7yxze%2BdzF3iBy%2FAweIzPykfXR9UEbEsXuKcpF33AlhfI%2BwoLC%2Bh3%2FwI%3D"></iframe>
-f
+
+
+<iframe frameborder="0" style="width:100%;height:2828px;" src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=sierra_nevada_shannon_QGIS_R.drawio#R7V1bc6O4Ev41rto9VXEh7jwmTjI7p2bPZiezl5kXlwyyzQ5GHsC57K8%2FEiAuloyJzS22UykbJBlEd3%2FdrVZLjJTJ6uVDANfLX7GDvJEsOS8j5XYky1eKKpMvWvKalGiakRQsAtdJiqS84NH9FyWFgJVuXAeFaVlSFGHsRe66XGhj30d2VCqDQYCfy83m2HNKBWu4QKVu0IJHG3qIa%2FaX60TLpNSUjbz8F%2BQuluzOQLeSmhm0vy8CvPHT%2B41k5V67V%2B%2FTC64gu1Z633AJHfxcKFLuRsokwDhKjlYvE%2BRR2pbJdr%2BjNut3gPyozg%2Fke6R%2Bf1ibV%2FadYn7%2B8DT7Y31%2FBVLuhdErIwhyCH3SUxxES7zAPvTu8tKb%2BKERvaxEzvI2nzBek0JACv9BUfSaMhtuIkyKltHKS2v5rqdPE%2BJNYKf9kKdz03t%2B1aP%2F%2Fvj9m2k83nz9%2FO%2BVlkoIDBYoqmiXco8%2BS%2BEGKWE%2BILxCUfBKGgTIg5H7VJYFmIrUImuXk5UcpJTdQeWKXj9Bb4OYsGxRHYbrRLrn7gsl7c0aBS65OwpIGbkFgQN6yIuK1ISeu%2FDJsU2oGddlkkbZ48BwmfEqXEPb9RdfYj4ppMBdxfBg37fuakGe0HNn5BPalDJTxw1IzzAlw%2F0zmk1DFDyhYBw%2BLcjv5tiPUjYbsWREhJyY9uYKmPSOc9LzP9OO0uNf9okAuXaEXiqZxmpVkP4mVT1E%2BSTnzzmQlZTUywKGVakBPgvRpPSBJkLB4PVv%2Bvuxxk6%2FppeLT25fSmev6dnhKDTqolAeFAwNDoa3KLTJQ0BS%2BuHm4z3HvWCJV7MN6cfN89KN0COBD615JqawzIPdOGgdBJJRAoECLA4ETOAbB4GQyvp%2BbUft5pqnU316ZP4AnLFrStV0ki29RCcV6BydZF2gLYDeFqWYbqqiFNHla3pIiBK50PtMH9lfxIqjIH4i6SwTKBZD1%2FMm2MPUpPjYp9eIYh1DKz00j9LDGY4ivEpPgpQSsXIifJh7sWlZuo6DfGpSogB%2FR%2ByyxAmS4r86zK0Wn%2F0QSDlpShwjgSKNreKf0SEAFOXC1mPYymqVsnUfGptV3pzsZHPKrn28DYlFZWZESngdQdePfUAQn3seXIduznt76XrOJ%2FiKNxG7DTvbY5Na4xsjA7NHMq9mgTlWin9AoHVlsy2%2Bme3Cc5tFToDXX5inRAvW2KWO%2Bt0ToXzYFIbji8ak0m7IPxH6CXUHNfI0E3IO8nPyT5sH0QT7BOVEvug1EAyjZxRGBwtKBof9gvJGUWjNH1QtThIebZc8pjt37f%2FBFWpVbYu07tFiUMC8eTgrzUNYaVhvY116sZyGb74a9AiMfBihGzqECjl5yPp5xMhd4kTEQTYZLZPhmb9wo41zEZK6hsHgBya62aTM1LlaFzIDdsoMofNFZN40ujU4mTHeaCL26JkaV%2BtCZloeCl6ckpqDScb7t%2Foocks%2BisYPJq%2FJQ8PAhePx%2BEwVSYaW4x2UCr4d4KBsXa0LxaFy8kFHXBP1IhoNuyUHS0qdq3UhKfwslDG2LmLStCtyuEapcbUu5KRG%2FP7iinTgiqjKYa5Ia7PYfMDzfmOfsxtSPzZ68nESPqgauyFna1%2FeHDY%2Fm%2BgIH3QlemUCLoJyiYmUSaPzsdeLI9KHI6Krw3JEdD7A%2BuD6m%2FBMVUiGk4sbwvJ3im4IOGM35A2icWZuiM7HVYmWm%2FAJnBdBOXc3hI%2BwXtyQPtwQk8%2Fu7nVqRucDqr9vUGBvwvMNiWRguczM6HwcVaEjXe0iGpeZmTJl%2BMAqjZ01a2ZOWVDOZm5Gv%2BSuDsMXARIvcf3GRPiw6mccnvHkjH5JYs1y%2BPlAKl0Vcb5RkUvq6i5J4SOrVPuaF0G5REXES3tLnojuRSnpS9Ki%2F9hgVnEVxky5Jg209UteR44W9PshQCHybZcuyaWJ0hKiC%2BNdFNJDn3xsfFr1L46%2FQuQh2yZ8hQ5ktyePk%2FQguSAnuuX11nvW9e5eBhcLWHpVcLCEHb686o2OB1uG1fyad52j8GB2kBD1N6VDae26qF0aCe5h6XpFrwtokwAwTVm%2BkiVJB4pkqkA1gaqM7fDpOJHvbym7wiJq2byjYMknEPhUSmsbOhh9CHe7GzpUCPteULBFmc2hIv3pAx0CFs2orI3lsjSYYGtFaNLb9JfHWbgKmhQg93FFh54woERmZipkZmcW5BYnKXFZQYCgk%2BByV1PSQXe3wRr%2BJhSKVd6EwpB55LJMlyJwWVnzwOVd1i6A%2B%2BJGBdySs6%2BFmhy19OR40DIw7kVtZ6BlS%2FQZYtUtxCaP1BpiM8qduLauy3fZ6kxb69va2rKssVT423I%2FW9bdfJjU9W0cEPUda%2B%2F0kUYTZXR9C2to8DCawnAazlvW10VJ7FR7b1lai98aRwcZh0sKXBtrbalwfqKsUxWummZBiUtjy9AqFTk9KezQ9gaMV4Ue9oO8aYwfN07pZwe0bu2uVZc1jfOmUv9a2X954xwgyXKVLm7bKveM4%2Foi0b0lZxKyPxohdSdKZeEBWp%2BGnBGoYMkDtA7wKw2OBvUsdxRAP5zjYHUe1htI%2BhDMt8z7YMVB8xbVC%2FMJ0POQhxcBXI3Ku6CW6op7oe5jFN1RNeWUgHGN8MC0yh6UYPxrKDz9mblsnvr8dHBO%2FSm5zalzANAofa8sUPtxhbqPHUo1bRjbKXwgrqrCz4qXITKVFYk1OiGgGNqYLZPIbLzOLzUGkmDT2NbAovcyi3QoWJhzydzJryVHs%2BnxBsNNEWB%2FKY%2Fen848%2BPb6ir9bf5k32ouabVbWupOoS2pZgBRzSzBaHlOo%2FYR329StQo7Kak3WM6%2B9e91a2e%2BCbr17IX44CuKHmXmCoFs82w%2BjwJ0RwtPp%2FrgA25sgYE4jpSGd9sdE18aBPBvTlADSoTpBPBiOHRjB8TyIt3bsbualFf9G0wWZJupY4OTnpY2rbbaNypmP7Sshud8vajxMfxx2%2BXULM5cfLxyaU2COyrkzcjt4UaXyXBTQWeJUcUpS5tHSWi6Bdnq5BGL5EUSuhQ2bj2kdJ%2Fd8wGICPXvjxZbGH03k0Q1NW3N9x31ynQ0WT%2F3DFZV9fxbSrzWmvyWHVA4JOePTNfaSmSfCSVzDbj3%2B%2FklsrZKycA39klixlDo7yVqjfQ4WM%2FgTITfN%2BiWfwqOf6SG9rBTn6c3hyvVek5%2BvSEfDGNylJnkqnyRK5Su9MUojnCAfyfuOsjPGGS3mDSm5pce0SxrlhUYYuq8tyNoyaT3oMnJ%2BmUQAsprMcdEy10VLnBOt5K%2FkhSWfRWNei5b7LVrquWjMd2G3TpiY3Zr5H6SgqGFpfaxjaXmMdVoC4tNM09IiIy4qPFmiP%2BvQLqvKyJYDUqNqNm%2Bp0A1c2HVe84orTc85kKrdrDJxSlhlqoB31MZkTGsWhV5sszY%2BzfhbLCxLXdqOE88MYwmkhu8UqvqWU2hJfOjXAiKnMC9tfizPx0wGbOhamzustHn7jeOwBnSCYFnBTu3P9TZEBuLL1N%2BspsSeTsP1lFrFWmOyI%2FzONiBolDPfZEkTxJ0FqW%2Ft%2BZnvKpR2BJQESavihuqwoMQnljbkZ56Xeykw4Bf%2F8uJfXvzLBoOO0lZqwSD8S%2B20crsrbda78xNFmyU15ye%2BUydRYS%2BGHYyTyLZQPHknURCEFzZUhxWMVPgg%2FB%2B%2BG4xSF4HOhQmmvIgj8RT7flYyf0ZvYxNHEdNvvKJVN9c%2B%2F7ufqKeSti%2B5jz8f4z8O2K6ZZbtG3w7bv11jWRkDXElbCZn92JIHhS11dyxj52CnjpnikLEd35iuYLjflNX0Egdm4bRy2jAxZ4K1u6opglR7Ru70MvAq8bUfiMOKhLB%2BiyMhD%2B4omTXz8EKmJ2dhiRRlCJaIf3vUaQKn7ihLHdYoS909ymrRgtkb6Jy0CduK5KuiN453bcLezeKpI1BYe4zW%2BEL241DIj9EeN6vUdv3nU2q1JN5wwUWAFtB38CiN2W83aCyE%2F44Mn6YPwfD1kqN1BHTq5lo1nxp%2BHHRE%2B5i2Y8Ael9D3sX9KhsoqZ33IBuANFXPhurFSvUTkd9Kyg%2FUPytgAqmxqyae5xQ8DjFU9r663NkJ8G3YN%2Brnln7S4IVKlDhGANrdN13GQEUAnDlbCgv3LYGfj1cZ3HeigcAcqS3Pb%2FD224prJEgB6p9hm%2Bo5rI%2F5H8WqCXBnsuQXX6RUitH1vRlbblkxd4NK2aWRdIGHL%2BvvHL2h2q7jq3bdvzx%2BvzmTtjlY3P4W9mHcgtlnwxvESYrd419NyyI6WEWi6Pja2PNVM7xZAxHDVtLkVAojft%2Fk0AaTVBZAxLADx74W5e8l2DoSJGVqjuesJzBRneJ4DApHfPnx%2Bd7aHTTFnsDG7zR2pFBVxfkI6mk6chGnooiCAUx89QQeOw%2BW6Fgt61IdtcFE2x6A83FAkweYWQDPGQG5HB4oXzb2zbYdFczTihr15A5X9LgDmOnQXfqbL7Hjr7XxDVOaM2%2FFAQHHcBfXSBbkFtGHmuv%2FYJHt9R3E9qKEXw2j6DxnptKwW%2B9rTxyw77kBRidnlA2Qs%2Bby03NcaW61Jw%2BmtYawE4f51973NqFb2W7ynyct0EdBMn2FYrOZ2%2FpG3Nx8FqsWbKNPIPPlOtjTR%2Bsk%2BGNra%2BMol73utYX9x68p%2BF%2FBFmJTsRRFhJ962wos%2F4%2FBU%2FNKKFxutI5xVJJbOj49DFDy5yTa0wB%2ByM0%2Fs0fYwGBiCnLnuN6A4vUyFShzszwcf1nsrtF7mrzugc%2FNvQjiOznxs%2Fn1u2sGpGVOgZtrat0MYbTu9JELhYwJe8IXt5L7kvqrXBbF%2FQqT%2FkL4TahomoZtkH78kgHNarq%2FOIjHZRn4SH5oGLKOw5PWaLTGkn3ylztEiiOYI2%2FU2PKzqtWgCl8VOPv768NvnL9fFcPPsdOIqumaOzfI0OgDM4nS1XbKQNacXWKnCw4D3iq3q9rCnRBuzKqo2ZgNdBhLZVDmQsBjlkXZllC6fLuSq5Aunlbv%2FAw%3D%3D"></iframe>
 
 
 
-
-
-
-
-
-La ejecución del anterior flujo de trabajo se realiza usando R. R es un lenguaje de programación muy frecuentemente utilizado en ámbitos científicos. Se usa para hacer análisis de datos, dibujar gráficas, mapas, etc. En esta práctica nos familiarizaremos un poco con este lenguaje. Concretamente usaremos un interfaz gráfico llamado RStudio. [Aquí](https://www.youtube.com/watch?v=v0rBJ86aMa8) tienes un breve vídeo en el que cuento cómo instalar QGIS, R y Rstudio.
+Este flujo de trabajo se ejecuta usando R. R es un lenguaje de programación muy frecuentemente utilizado en ámbitos científicos. Se usa para hacer análisis de datos, dibujar gráficas, mapas, etc. En esta práctica nos familiarizaremos un poco con este lenguaje. Concretamente usaremos un interfaz gráfico llamado RStudio. [Aquí](https://www.youtube.com/watch?v=v0rBJ86aMa8) tienes un breve vídeo en el que cuento cómo instalar QGIS, R y Rstudio.
 
 
 
 El flujo de trabajo anterior se realiza ejecutando secuencialmente las líneas del siguiente bloque de código:
 
 ```R
-#Este script calcula el Indice Shannon de Sierra Nevada
-# usando la información existente en GBIF y un mapa de vegetación a escala 1:10.000
+# Este script genera un mapa del índice de Shannon a partir de los datos de presencias de especies existentes en GBIF y de un mapa de vegetación de Sierra Nevada
 
-## Establece directorio de trabajo. Recuerda cambiarlo por el tuyo. Si trabajas en Windows ten en cuenta que cuando copies la ruta de la carpeta, las barras tienen que ir hacia la derecha (/). También has de cambiar (si trabajas en Windows) las comillas dobles (") por las sencillas (')
+# 1. Establece directorio de trabajo
+setwd("/Users/fjbonet_trabajo/Library/CloudStorage/OneDrive-UniversidaddeCórdoba/4_docencia/eco_ccaa_uco/actos_docentes/P_shannon_ecologia_ccaa/preparacion/borrar/csv_gbif_sierra_nevada")
 
-setwd("/Users/fjbonet_trabajo/Google_Drive/4_docencia/eco_ccaa_uco/actos_docentes/P_shannon_ecologia_ccaa/preparacion")
-
-## Carga paquetes que necesitamos
-install.packages("rgdal")
-library(rgdal)
+# 2. Instalar y cargar los paquetes necesarios
+install.packages("sf")
+library(sf)
 
 install.packages("sqldf")
 library(sqldf)
 
-## Importa la capa con las ocurrencias de GBIF
-ocurrencias<-readOGR(dsn=".", layer="ocurrencias_sierra_nevada_23030", verbose = FALSE)
+# 3. Importamos el archivo csv de GBIF con sus atributos geográficos
+presencias <- read.csv("0118822-200613084148143.csv", header = TRUE, sep ="\t", dec = ".")
 
-## Importa la capa con la delimitación de las comunidades ecológicas.
-comunidades<-readOGR(dsn=".",layer="vegetacion_snevada_23030", verbose = FALSE)
+# 4. Convertimos la tabla importada a un objeto geográfico tipo sf
+presencias_geo <- st_as_sf(presencias, coords = c("decimalLongitude","decimalLatitude"), crs = 4326)
 
-## Unión espacial: asigna a cada punto el código de la comunidad en la que se encuentra.
-ocurrencias$id_com <- over(ocurrencias, comunidades)$OBJECTID
+# 5. Reproyectamos la capa creada al sistema de coordenadas 23030 (UTM)
+presencias_geo_23030 <- st_transform(presencias_geo, crs = 23030)
 
-## Extraer la "tabla de atributos" para hacer los cálculos del índice de Shannon
-bio<-ocurrencias@data
+# 6 Importamos la capa con la delimitación de las comunidades ecológicas.
+¿COMO HACEMOS ESTO? BUSCAREMOS EN INTERNET...
 
-## Calcular el índice de Shannon
+# 9. Asignamos a cada punto de presencia el código del polígono del mapa de vegetación en el que está. Unión espacial.
+presencias_x_comunidades <- st_join(presencias_geo_23030,left = FALSE, comunidades)
 
-### Calcular el número de individuos por especie y por comunidad (num_ind_sp_com)
-T_num_ind_sp_com<-sqldf("SELECT id_com, scientific,  count(scientific) num_ind_sp_com  FROM bio GROUP BY id_com, scientific")
+# 10. Extraemos la tabla de atributos de la capa de puntos creada y borramos todos los campos menos los dos que nos interesan. 
+bio <- as.data.frame(presencias_x_comunidades)
+bio <- bio[c('OBJECTID', 'scientificName')]
 
-### Calcular el número total de individuos por comunidad.
-T_num_ind_com<-sqldf("SELECT id_com, sum(num_ind_sp_com) num_ind_com FROM T_num_ind_sp_com GROUP BY id_com")
+# 11. Calculamos el número de individuos por especie y por polígono (num_ind_sp_pol)
+T_num_ind_sp_pol<-sqldf("SELECT OBJECTID, scientificName,  count(scientificName) num_ind_sp_pol  FROM bio GROUP BY OBJECTID, scientificName")
 
-### Fusionar las tablas anteriores para calcular Pi
-T_num_ind_sp_com_mas_num_ind_com<-sqldf("SELECT id_com, scientific, num_ind_sp_com, num_ind_com FROM T_num_ind_sp_com LEFT JOIN T_num_ind_com USING(id_com)")
+# 12. Calcular el número total de individuos por polígono.
+T_num_ind_pol<-sqldf("SELECT OBJECTID, sum(num_ind_sp_pol) num_ind_pol FROM T_num_ind_sp_pol GROUP BY OBJECTID")
 
-### Calcular pi por especie y por comunidad
-T_num_ind_sp_com_mas_num_ind_com<-sqldf("SELECT id_com, scientific, num_ind_sp_com, num_ind_com, (num_ind_sp_com*1.0/num_ind_com) pi FROM T_num_ind_sp_com_mas_num_ind_com")
+# 13. Fusionar las tablas anteriores para calcular Pi
+T_num_ind_sp_pol_mas_num_ind_pol<-sqldf("SELECT OBJECTID, scientificName, num_ind_sp_pol, num_ind_pol FROM T_num_ind_sp_pol LEFT JOIN T_num_ind_pol USING(OBJECTID)")
 
-### Calcular el log2 pi por especie y por comunidad (log = ln). Log2(pi)=log(pi)/log(2)
-T_num_ind_sp_com_mas_num_ind_com<-sqldf("SELECT id_com, scientific, num_ind_sp_com, num_ind_com, pi, (log(pi)/log(2))*pi lnpi_pi FROM T_num_ind_sp_com_mas_num_ind_com")
+# 14. Calcular pi por especie y por cuadrícula.
+T_num_ind_sp_pol_mas_num_ind_pol<-sqldf("SELECT OBJECTID, scientificName, num_ind_sp_pol, num_ind_pol, (num_ind_sp_pol*1.0/num_ind_pol) pi FROM T_num_ind_sp_pol_mas_num_ind_pol")
 
-### Calcular H por comunidad
-T_Shannon<-sqldf("SELECT id_com, sum(lnpi_pi)*-1 H FROM T_num_ind_sp_com_mas_num_ind_com GROUP BY id_com")
+# 15. Calcular el log2 pi por especie y por cuadrícula (log = ln). Log2(pi)=log(pi)/log(2)
+T_num_ind_sp_pol_mas_num_ind_pol<-sqldf("SELECT OBJECTID, scientificName, num_ind_sp_pol, num_ind_pol, pi, (log(pi)/log(2))*pi lnpi_pi FROM T_num_ind_sp_pol_mas_num_ind_pol")
 
-## Fusionar la tabla que tiene el índice de Shannon con la distribución de comunidades.
-comunidades<-merge(x = comunidades, y = T_Shannon, by.x = "OBJECTID", by.y = "id_com")
+# 16. Calcular H por cuadrícula
+T_Shannon<-sqldf("SELECT OBJECTID, sum(lnpi_pi)*-1 H FROM T_num_ind_sp_pol_mas_num_ind_pol GROUP BY OBJECTID")
 
-## Exportar la capa resultante a un shapefile.
-writeOGR(comunidades, dsn=".", layer="Shannon_com_sierra_nevada", driver="ESRI Shapefile", overwrite=TRUE )
+# 17. Fusionar la tabla que tiene el índice de Shannon con la malla de cuadrículas.
+comunidades<-merge(x = comunidades, y = T_Shannon, by.x = "OBJECTID", by.y = "OBJECTID")
+
+# 18. Exportamos la capa de comunidades a un fichero de formas para visualizarlo en QGIS.
+st_write(comunidades, "Shannon_sierra_nevada.shp", append=FALSE)
+
 
 ```
 
@@ -181,7 +181,7 @@ En el mapa resultante se pueden identificar varios patrones de distribución esp
 ## Entrega a realizar
 
 Una vez que hayas generado el mapa de diversidad de Sierra Nevada, haz click [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2022_2023/geoinfo/gradiente_latitud.zip) y descarga el archivo comprimido. Descomprímelo y carga en QGIS el fichero de formas que contiene. En él hay varios polígonos distribuidos en un gradiente de latitud desde Alaska hasta Colombia. Cada polígono muestra (en el campo H de la trabla de atributos), el promedio de la diversidad de todas las comunidades que hay en su interior. Para ver bien esto haz lo siguiente:
-+ Despliega el shapefile anterior en un proyecto nuevo de QGIS. Asigna a cada polígono un color en función de lo valores del índice de Shannon (Campo H).
++ Despliega el shapefile anterior en un proyecto nuevo de QGIS. Asigna a cada polígono un color en función de sus valores del índice de Shannon (Campo H).
 + Instala un plugin llamado *Quick map services*. Te permitirá mostrar servicios de cartografía de todo el planeta. Cuando lo instales, verás que aparecen dos botones nuevos. Selecciona el de buscar y localiza el servicio llamado *Google satellite*. Cárgalo para ver la zona del mundo a la que se refiere la capa anterior.
 
 Una vez hecho esto, contesta de manera razonada a las siguientes preguntas:
@@ -197,4 +197,4 @@ Sube tus reflexiones [aquí](https://www.turnitin.com/t_submit.asp?r=28.73505628
 
 
 
-  ff
+  
