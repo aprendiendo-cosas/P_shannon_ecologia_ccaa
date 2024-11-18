@@ -175,7 +175,7 @@ Tendréis que buscar un método para asignar acada polígono de esta capa el val
 
 
 ## Resultados esperables
-El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de un fichero de formas vectorial en el que se ha asignado el valor del índice Shannon a cada polígono del mapa de vegetación inicial. El mapa se ha obtenido de la siguiente forma:
+El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de un fichero ráster en el que se ha asignado el valor del índice Shannon a cada polígono del mapa de vegetación inicial. El mapa se ha obtenido de la siguiente forma:
 
 + Cargamos en QGIS la capa raster obtenida al final del flujo de trabajo anterior.
 + Clasificamos en función de los valores numéricos de cada píxel de la siguiente manera:
@@ -203,13 +203,33 @@ En el mapa resultante se pueden identificar varios patrones de distribución esp
 
 + Hemos identificado una serie de patrones visualmente. ¿cómo crees que podríamos cuantificarlos y comprobar si realmente existen?
 
-
-
-## Material a preparar para el trabajo de los ecosistemas
-
+El resultado a obtener en la parte de asignar valores promedios de diversidad a cada tipo de ecosistema es una tabla parecida a esta:
 
 
 
+| nombre                                           | Shape_Leng          | Shape_Area             | id_poligon | _mean | _stdev |
+| ------------------------------------------------ | ------------------- | ---------------------- | ---------- | ----- | ------ |
+| Robledales                                       | 52.892.133.605.783  | 13.169.454.140.145.700 | 1487       | x     | x      |
+| Pastos de media montaña                          | 320.664.866.227.179 | 32.480.149.403.061.500 | 461        | x     | x      |
+| Sistemas acuáticos                               | 453.913.381.244.217 | 637.886.087.970.162    | 1174       | x     | x      |
+| Pastizales, canchales y roquedos de Alta Montaña | 584.048.237.224.741 | 4.128.511.106.604.420  | 1          | x     | x      |
+| Encinares                                        | 256.310.502.294.566 | 29.595.384.661.394.400 | 79         | x     | x      |
+| Pinares autóctonos sobre dolomías                | 15.731.043.794.798  | 817.195.403.492.786    | 756        | x     | x      |
+| Enebrales-piornales                              | 137.637.568.034.509 | 6.368.878.775.305.160  | 766        | x     | x      |
+| Cultivos de montaña extensivos                   | 99.446.226.983.354  | 6.026.301.713.036.190  | 951        | x     | x      |
+| Pinares de repoblación                           | 149.243.344.304.335 | 6.430.065.174.753.230  | 1244       | x     | x      |
+| Pinares autóctonos de P. sylvestris              | 795.679.016.504.942 | 10.146.799.532.010.600 | 1172       | x     | x      |
+| Borreguiles                                      | 476.411.929.684.921 | 659.306.197.944.578    | 891        | x     | x      |
+| Matorral media montaña                           | 17.686.177.336.196  | 16.753.416.186.208.000 | 208        | x     | x      |
+
+
+
+En los campos *_mean* y *_stdev* se almacenarán respectivamente los valores promedio y la desviación estándard de la diversidad para cada tipo de ecosistema. Ahora toca reflexionar sobre los resultados obtenidos:
+
++ ¿Qué ecositema tiene menos diversidad?, ¿por qué?
++ ¿Cuál es más diverso?, ¿por qué?
++ ¿En qué categoría podríamos poner los bosques de ribera? ¿por qué no aparecen en la lista?
++ También tenéis que pensar una forma de representar la diversidad de vuestro ecosistema en el trabajo de manera que se pueda comparar fácilmente con los demás ecosistemas.
 
 
 
