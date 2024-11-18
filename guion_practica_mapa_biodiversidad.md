@@ -1,10 +1,10 @@
-# Instrucciones para realizar la práctica denominada "Construcción de un mapa de diversidad de Sierra Nevada"
+# Construcción de un mapa de diversidad (índice de Shannon) de Sierra Nevada
 
-
-> + **_Versión_**: 2023-2024
+> + **_Tipo de material_**: <span style="display: inline-block; font-size: 12px; color: white; background-color: #4caf50; border-radius: 5px; padding: 5px; font-weight: bold;"> Prácticas</span> 
+> + **_Versión_**: 2024-2025
 > + **_Asignatura (grado)_**: Ecología (Ciencias ambientales). 
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
-> + **_Duración_**: 2 sesiones de 3 horas cada una.
+> + **_Duración_**: 1 sesión de 1.5 horas en clase y otras 2 horas en casa.
 
 
 
@@ -16,19 +16,19 @@ Esta práctica tiene los siguientes objetivos:
   + Aprender a generar mapas de diversidad biológica. Mapas de distribución del índice de Shannon.
   + Reconocer patrones de distribución de la diversidad en un territorio concreto (Sierra Nevada).
   + Identificar las causas de los patrones anteriores.
-  
-+ Instrumentales:
+  + Cuantificar la diversidad de los distintos tipos de ecosistemas con los que estamos trabajando en las prácticas. Concretamente, cada equipo obtendrá un valor de diversidad promedio del ecosistema con el que trabaja. 
 
++ Instrumentales:
   + Afianzar nuestro conocimiento de SIG.
-  + Empezar a conocer el lenguaje de programación R e iniciarnos en su manejo.
-  + Aprender algunos conceptos básicos de las bases de datos relacionales.  
-  
-   
+  + Seguir aprendiendo el lenguaje de programación R e iniciarnos en su manejo.
+  + Aprender algunos conceptos básicos de las bases de datos relacionales.
+
+
 
 
 ## Contextualización ecológica
 
-Esta sesión práctica está muy relacionada con el tema en el que hablamos de la diversidad de las [comunidades ecológicas](https://rawcdn.githack.com/aprendiendo-cosas/Te_comunidades_diversidad_ecologia_ccaa/2023_2024/guion_comunidades_diversidad.html). En concreto, usaremos los conocimientos adquiridos en esa sesión para construir un mapa de biodiversidad de Sierra Nevada. Esto quiere decir, que debes de repasar dichos conceptos con objeto de que el aprendizaje de esta práctica sea realmente efectivo.
+Esta sesión práctica está muy relacionada con el tema en el que hablamos de la diversidad de las [comunidades ecológicas](https://rawcdn.githack.com/aprendiendo-cosas/Te_comunidades_diversidad_ecologia_ccaa/2024_2025/guion_comunidades_diversidad.html). En concreto, usaremos los conocimientos adquiridos en esa sesión para construir un mapa de biodiversidad de Sierra Nevada. Esto quiere decir, que debes de repasar dichos conceptos con objeto de que el aprendizaje de esta práctica sea realmente efectivo.
 
 Para cuantificar la diversidad biológica se pueden utilizar muchos índices. En nuestro caso usaremos el denominado índice de Shannon-Wiever, que es uno de los más robustos y comunmente utilizados. Para su cálculo se necesita la siguiente información:
 
@@ -83,12 +83,18 @@ El flujo de trabajo anterior se realiza ejecutando secuencialmente las líneas d
 # Este script genera un mapa del índice de Shannon a partir de los datos de presencias de especies existentes en GBIF y de un mapa de vegetación de Sierra Nevada
 
 # 1. Establece directorio de trabajo
-setwd("/Users/fjbonet_trabajo/Library/CloudStorage/OneDrive-UniversidaddeCórdoba/4_docencia/eco_ccaa_uco/actos_docentes/P_shannon_ecologia_ccaa/preparacion/borrar/csv_gbif_sierra_nevada")
+setwd("/tu/ruta")
 
 # 2. Instalar y cargar los paquetes necesarios
+# 2.1 El paquete "sf" permite a R trabajar con shapefiles. Es decir capas vectoriales.
 install.packages("sf")
 library(sf)
 
+# 2.2 El paquete "terra" permite a R trabajar con información geográfica en formato raster.
+install.packages("terra")
+library(terra)
+
+# 2.3 El paquete "sqldf" permite a R hacer operaciones con tablas como si fuera una base de datos.
 install.packages("sqldf")
 library(sqldf)
 
@@ -102,9 +108,10 @@ presencias_geo <- st_as_sf(presencias, coords = c("decimalLongitude","decimalLat
 presencias_geo_23030 <- st_transform(presencias_geo, crs = 23030)
 
 # 6 Importamos la capa con la delimitación de las comunidades ecológicas.
-¿COMO HACEMOS ESTO? BUSCAREMOS EN INTERNET...
+¿COMO HACEMOS ESTO? BUSCAREMOS EN INTERNET O LE PREGUNTAMOS A CHATGPT...
+SE TRATA DE APRENDER CÓMO R PUEDE IMPORTAR LA CAPA DE COMUNIDADES ECOLÓGICAS DESCRITA MÁS ARRIBA. SE TRATA DE UN SHAPEFILE DE POLÍGONOS. EL OBJETO CREADO DEBE DE LLAMARSE "comunidades"
 
-# 9. Asignamos a cada punto de presencia el código del polígono del mapa de vegetación en el que está. Unión espacial.
+# 9. Asignamos a cada punto de presencia el código del polígono del mapa de vegetación en el que está. Unión espacial. OJO, ESTE PASO PUEDE TARDAR UNOS MINUTOS EN EJECUTARSE PORQUE REQUIERE HACER MUCHAS OPERACIONES
 presencias_x_comunidades <- st_join(presencias_geo_23030,left = FALSE, comunidades)
 
 # 10. Extraemos la tabla de atributos de la capa de puntos creada y borramos todos los campos menos los dos que nos interesan. 
@@ -132,18 +139,49 @@ T_Shannon<-sqldf("SELECT OBJECTID, sum(log2pi_pi)*-1 H FROM T_num_ind_sp_pol_mas
 # 17. Fusionar la tabla que tiene el índice de Shannon con la capa de comunidades.
 comunidades<-merge(x = comunidades, y = T_Shannon, by.x = "OBJECTID", by.y = "OBJECTID")
 
-# 18. Exportamos la capa de comunidades a un fichero de formas para visualizarlo en QGIS.
-st_write(comunidades, "Shannon_sierra_nevada.shp", append=FALSE)
+# 18. Exportamos el objeto "comunidades" a un archivo raster que usaremos más adelante
+# 18.1 Convertimos "comunidades" a un archivo vectorial legible por el paquete "terra". Al haber sido creado con el paquete "sf" hay que hacer esta conversión
+comunidades_vect<-vect(comunidades)
+
+#18.2 Creamos un raster vacío con la extensión de "comunidades_vect" y un tamaño de píxel de 100m
+raster_base<-rast(comunidades_vect, res=100)
+
+#18.3 Creamos un objeto raster en R resultado de rasterizar "comunidades_vect" usando como "plantilla" el llamado "raster_base" y añadiendo a cada píxel los valores contenidos en el campo "H" de "comunidades_vect"
+shannon_snevada<-rasterize(comunidades_vect, raster_base, field="H")
+
+# 18. Exportamos "shannon_snevada" a un archivo raster en formato .tif
+writeRaster(shannon_snevada, "shannon_snevada.tif", overwrite=TRUE)
 
 
 ```
 
 
 
+El flujo de trabajo descrito arriba permite obtener un mapa de diversidad de Sierra Nevada asumiendo que cada polígono del mapa de vegetación es una comunidad. Esto nos permitirá estudiar patrones espaciales de cambio de la diversidad a escala de todo el territorio. Pero nuestro objetivo en el contexto del trabajo de prácticas que tenemos que hacer es generar un valor numérico que muestre la diversidad promedio de cada uno de los ecosistemas con los que estamos trabajando. Para eso tendremos que añadir al flujo de trabajo que se describe a continuación los pasos necesarios para hacer lo siguiente:
+
++ Combinar de alguna manera (con R o con QGIS) el mapa de diversidad obtenido (en formato raster) con el mapa de distribución de los ecosistemas de Sierra Nevada.
++ Calcular el valor promedio de todos los píxeles del mapa de diversidad en cada uno de los ecosistemas de Sierra Nevada. 
+
+Esta es la parte que tendréis que hacer vosotros individualmente o en grupo. Para ello necesitáis usar esta capa (*ecosistemas_snev_dissolve.shp*) que muestra la distribución de los ecosistemas de Sierra Nevada. Al mostrarla en QGIS veréis que es una capa vectorial con polígonos. Pero tiene una particularidad. Es una capa en la que todos los polígonos que tienen el mismo tipo de ecosistema se han fusionado en uno solo. Aunque visualmente aparezcan como muchos polígonos, en realidad para el SIG y para la tabla de atributos de la capa, computa como un único polígono. Por eso, cuando abráis la tabla de atributos, veréis solo 12 filas que corresponden con los 12 tipos de ecosistemas que hay en Sierra Nevada según esta capa. 
+
+Tendréis que buscar un método para asignar acada polígono de esta capa el valor promedio de índice de Shannon de todos los píxeles que contiene cada tipo de ecosistema. Por ejemplo, para el polígono marcado en rojo de la imagen inferior, se calculará el valor promedio del índice de Shannon de todos los píxeles que tiene dentro (mostrados en una gama de colores del rojo al verde). Podéis hacer esto en QGIS o en R. Es importante que preguntéis a ChatGPT o a cualquier IA para dar con el método adecuado. Las palabras claves podrían ser: extraer información de un raster a una capa poligonal, asignar estadísticas de un raster a una capa de polígonos, etc.
+
+
+
+![zonal](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/zonal_statistics.png)
+
+
+
 
 
 ## Resultados esperables
-El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de un fichero de formas vectorial en el que se ha asignado el valor del índice Shannon a cada polígono del mapa de vegetación inicial. 
+El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de un fichero de formas vectorial en el que se ha asignado el valor del índice Shannon a cada polígono del mapa de vegetación inicial. El mapa se ha obtenido de la siguiente forma:
+
++ Cargamos en QGIS la capa raster obtenida al final del flujo de trabajo anterior.
++ Clasificamos en función de los valores numéricos de cada píxel de la siguiente manera:
+  + Método de clasificación: Banda sencilla pseudocolor.
+  + Rampa de colores: Spectral
+  + Modo de clasificación: quantiles
 
 
 
@@ -151,7 +189,7 @@ El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de u
 
 
 
-En el mapa resultante se pueden identificar varios patrones de distribución espacial de la biodiversidad en Sierra Nevada. Durante la práctica reflexionamos sobre dichos patrones:
+En el mapa resultante se pueden identificar varios patrones de distribución espacial de la biodiversidad en Sierra Nevada. En teoría estudiamos esto desde un punto de vista conceptual. Ahora toca reflexionar de manera práctica con el mapa delante: 
 
 + ¿Cómo cambia la diversidad al aumentar la altitud?
 
@@ -167,21 +205,26 @@ En el mapa resultante se pueden identificar varios patrones de distribución esp
 
 
 
-## Entrega a realizar
+## Material a preparar para el trabajo de los ecosistemas
 
-Una vez que hayas generado el mapa de diversidad de Sierra Nevada, haz click [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2023-2024/geoinfo/gradiente_latitud.zip) y descarga el archivo comprimido. Descomprímelo y carga en QGIS el fichero de formas que contiene. En él hay varios polígonos distribuidos en un gradiente de latitud desde Alaska hasta Colombia. Cada polígono muestra (en el campo H de la trabla de atributos), el promedio de la diversidad de todas las comunidades que hay en su interior. Para ver bien esto haz lo siguiente:
-+ Despliega el shapefile anterior en un proyecto nuevo de QGIS. Asigna a cada polígono un color en función de sus valores del índice de Shannon (Campo H).
-+ Instala un plugin llamado *Quick map services*. Te permitirá mostrar servicios de cartografía de todo el planeta. Cuando lo instales, verás que aparecen dos botones nuevos. Selecciona el de buscar y localiza el servicio llamado *Google satellite*. Cárgalo para ver la zona del mundo a la que se refiere la capa anterior.
 
-Una vez hecho esto, contesta de manera razonada a las siguientes preguntas:
-+ ¿Puedes ver un patrón espacial en la distribución de la diversidad? En caso afirmativo, ¿cuál es?
-+ ¿A qué crees que se debe el mencionado patrón de distribución? Enumera y describe las razones físicas o biológicas que crees que justifican el patrón observado.
-+ ¿Qué relación hay entre el patrón que has identificado y el que hemos visto al subir en altitud en Sierra Nevada?
 
-Sube tus reflexiones [aquí](https://www.turnitin.com/t_submit.asp?aid=150251417) usando un archivo de word o libreoffice. Esta entrega no tiene calificación cuantitativa ni tampoco rúbrica. Haré comentarios personales basándome en los siguientes criterios:
 
-+ Solidez de las reflexiones realizadas.
-+ Grado de comprensión de la relación entre factores que explican la diversidad y patrones espaciales de esta.
-+ Claridad de la redacción.
 
-  
+
+
+
+
+
+
+****
+
+[Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/archive/refs/tags/2024_2025.zip) puedes descargar un archivo .zip que contiene este guión en formato html y todo el material que incluye.
+
+****
+Haz click [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/releases) para ver cómo ha cambiado este guión en los distintos cursos académicos.
+
+****
+ <p xmlns:cc="http://creativecommons.org/ns#" >El contenido de este repositorio se puede utilizar bajo la siguiente licencia:  <a  href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"  target="_blank" rel="license noopener noreferrer"  style="display:inline-block;">CC BY-NC-SA 4.0<img  style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"   src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"  alt=""><img  style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"   src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"  alt=""><img  style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"   src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"  alt=""><img  style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"   src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"  alt=""></a></p> 
+
+<p>Esta licencia no aplica a enlaces a artículos, libros o imágenes no originales. Estos productos tienen su licencia correspondiente.</p>
