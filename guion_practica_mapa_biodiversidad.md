@@ -166,6 +166,8 @@ Esta es la parte que tendréis que hacer vosotros individualmente o en grupo. Pa
 
 Tendréis que buscar un método para asignar acada polígono de esta capa el valor promedio de índice de Shannon de todos los píxeles que contiene cada tipo de ecosistema. Por ejemplo, para el polígono marcado en rojo de la imagen inferior, se calculará el valor promedio del índice de Shannon de todos los píxeles que tiene dentro (mostrados en una gama de colores del rojo al verde). Podéis hacer esto en QGIS o en R. Es importante que preguntéis a ChatGPT o a cualquier IA para dar con el método adecuado. Las palabras claves podrían ser: extraer información de un raster a una capa poligonal, asignar estadísticas de un raster a una capa de polígonos, etc.
 
+Y para terminar, una pista muy buena: habéis hecho ya algo parecido con Jorge en la asignatura de SIG. Recordad cuando asignásteis a cada ecosistema su altura...
+
 
 
 ![zonal](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/zonal_statistics.png)
