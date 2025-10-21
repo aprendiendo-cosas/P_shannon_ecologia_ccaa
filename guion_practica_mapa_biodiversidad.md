@@ -42,7 +42,7 @@ Como habrás leído en el apartado de objetivos, nos planteamos cuestiones muy d
 
 - **Aproximación de complejidad creciente**: Cuando aprendemos algo nuevo, es útil ir incorporando ideas y conceptos poco a poco, aumentando la complejidad hasta llegar al "destino final" del aprendizaje. En nuestro caso, explicaré la metodología que seguiremos usando tres niveles de complejidad: uno con una presentación, otro en la pizarra y finalmente habrá disponible un esquema digital muy detallado. Este flujo de trabajo describe los pasos que seguiremos con R para generar el mapa de diversidad.
 - **Enseñanza incremental:** Este método docente implica dividir las tareas en bloques cuyo abordaje implica satisfacer objetivos de aprendizaje específicos. Además, para avanzar en el flujo de trabajo será necesario ir completando los bloques de manera secuencial. Aplicar esta técnica implica que el guión se divide en bloques específicos y explicados de manera individual.
-- **Andamiaje:** Esto consiste en que durante el aprendizaje yo os dejaré andamios en forma de pistas, sugerencias, pequeños retos, etc. para mejorar vuestras habilidades con R. No os daré el código completo, sino que os daré apoyos temporales que os ayudarán a realizar tareas que aún no sabéis hacer de forma autónoma. A lo largo de los bloques en los que se divide la metodología aparecerán varios de estos andamios. Se irán retirando progresivamente conforme vayáis aprendiendo. En los últimos bloques habrá menos pistas. 
+- **Andamiaje:** Esto consiste en que durante el aprendizaje yo os dejaré andamios en forma de pistas, sugerencias, pequeños retos, etc. para mejorar vuestras habilidades con R. No os daré el código completo, sino que os daré apoyos temporales que os ayudarán a realizar tareas que aún no sabéis hacer de forma autónoma. A lo largo de los bloques en los que se divide la metodología aparecerán varios de estos andamios. Se irán retirando progresivamente conforme vayáis aprendiendo. En los últimos bloques habrá menos pistas. Es decir, habrá un proceso de asunción paulatina de responsabilidad por vuestra parte. 
 
 Atendiendo a todo lo anterior, el guión se divide en los siguientes apartados a partir de aquí:
 
@@ -52,9 +52,13 @@ Atendiendo a todo lo anterior, el guión se divide en los siguientes apartados a
 
 Vamos a ello:
 
-## Primer nivel de complejidad: ideas generales del flujo de trabajo a seguir y conexión con la teoría.
+
+
+## *Primer nivel de complejidad*: ideas generales del flujo de trabajo a seguir y conexión con la teoría.
 
 La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/view/ACfMCVaCBbJVoGwMJZaY) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2024_2025/presentacion/1_mapa_biodiv_ecologia_ccaa.exe) para Windows y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2024_2025/presentacion/1_mapa_biodiv_ecologia_ccaa.zip) para Mac. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2024_2025/presentacion/1_mapa_biodiv_ecologia_ccaa.pdf) la tienes en formato pdf. En esta presentación se describe de manera muy general cómo se realizará el mapa de biodiversidad. Se trata de la primera explicación de este tipo que realizamos durante la clase. 
+
+<iframe src="https://prezi.com/p/embed/kCzf6valb3SyKKH5ZSUG/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="515" width="560"></iframe>
 
 En este primer nivel de complejidad aprenderemos:
 
@@ -63,9 +67,23 @@ En este primer nivel de complejidad aprenderemos:
 + Los conteos de individuos por especie se muestran ya de manera agregada. Contamos el número de individuos que hay de cada especie y ya tenemos esos datos en una tabla. En realidad, nuestros datos se organizan de otra manera. En el siguiente nivel de complejidad en qué consiste esta diferencia.
 
 
+## *Segundo nivel de complejidad*: conexión del flujo de trabajo con los datos reales que usaremos. Descripción en la pizarra.
+
+En este segundo nivel de complejidad explicaré con el apoyo de la pizarra y de manera más concreta lo que haremos durante esta práctica. Partiendo del esquema planteado en el primer nivel de complejidad, incorporaremos una serie de elementos nuevos:
++ Las fuentes de datos que usaremos para la práctica: mapa de distribución de comunidades ecológicas y mapa de presencia de especies.
++ Los procesos de importación de los datos en R.
++ Algunas funcionalidades de R relacionadas con los SIG. Es decir, cómo R puede ser un SIG muy potente.
++ Cómo se agrega la información numérica en las tablas para calcular el índice de Shannon.
+
+ A continuación se muestra lo que se dibujó en la pizarra.
+
+![pizarra](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2024_2025/imagenes/pizarra.jpg)
 
 
-<iframe src="https://prezi.com/p/embed/kCzf6valb3SyKKH5ZSUG/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="515" width="560"></iframe>
+
+
+
+
 
 
 
@@ -75,9 +93,12 @@ Para su cálculo se necesita la siguiente información:
 + Listado de especies existente en esa comunidad.
 + Abundancia de cada especie en dicha comunidad.
 
-## Metodología y flujo de trabajo
+
+
+
 
 Como se puede observar en la presentación anterior, para calcular la diversidad de una comunidad, necesitamos dos fuentes de información:
+
 + Información de distribución de especies en la zona de estudio (Sierra Nevada). Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada [GBIF](https://www.gbif.org/) (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2024_2025/geoinfo/csv_gbif_sierra_nevada.zip) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada en el mismo formato en el que se obtienen de GBIF. 
 
 ![puntos](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2024_2025/imagenes/puntos.png)
@@ -96,15 +117,20 @@ A partir de estas dos fuentes de datos obtendremos el índice de Shannon para ca
 
 
 
+
+
+## *Tercer nivel de complejidad*: traducción del flujo de trabajo a un programa de R
+
+
+
 Para ello seguiremos los pasos que se muestran en el siguiente flujo de trabajo (se ve un poco pequeño, pero si vas a la parte de abajo encontrarás una herramienta lupa para aumentar y otra para desplazarte). También puedes descargar el flujo de trabajo [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/refs/tags/2024_2025/presentacion/sierra_nevada_shannon_QGIS_R.drawio.zip) (se abre con [esta](https://www.diagrams.net/) aplicación).
 
 
+¿modificar el flujograma para que muestre los bloques en los que se divide el código de R?
+diría que sí...
 
 <iframe frameborder="0" style="width:100%;height:2828px;" src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=sierra_nevada_shannon_QGIS_R.drawio#R7V1bc6O4Ev41rto9VXEh7jzmOjunZs9mJrO3eXHJINvsYOQBnDj7648EiIslY2Jzi%2B1UygZJBtHdX3er1RIj5Xa5%2BRDA1eJX7CBvJEvOZqTcjWRZ0S3ySQtekwLTMJKCeeA6SZGUFzy5%2F6KkELDSteugMC1LiiKMvchdlQtt7PvIjkplMAjwS7nZDHtOqWAF56jUDVrwZEMPcc3%2BdJ1okT6FbOTlvyB3vmB3BuyBp9D%2BPg%2Fw2k%2FvN5KVB%2B1BfUgvuITsWul9wwV08EuhSLkfKbcBxlFytNzcIo%2BStky2hx21Wb8D5Ed1fiA%2FIPX748q8su8V88uH5%2Bnvq4crIKedi14ZQZBD6JOe4iBa4Dn2oXefl97ED43oZSVylrf5hPGKFAJS%2BA%2BKoteU2XAdYVK0iJZeWst3PX2aEK8DO%2B2HPJmZ3surHv33x%2BdvpvF08%2FeXf6%2B0VEJgMEdRRbuUe%2FRZCjdICfMB4SWKglfSIEAejNznsizAVKTmWbucrOQgpewOKlf0%2Bhl6a8SEZYvqMFwl0j1zN5S0NysUuOTuKCBl5BYEDugxLypSE3ru3CfHNqFmXJdJGmWPA8NFxqtwBW3Xn3%2BN%2BaSQAncZw4N937nLOXlCz52ST2hTykwcNyA9w5QMDy9oOglR8IyCcfg8J7%2BbYT9K2WzEkhERcmLamytg0jvOSM%2F%2FSDtKj3%2FZJwLk2hHaVDKN1aog%2FU2qemQ5JfRLDmQlJfWigGFVaoDPQjQpfaCJUDB4%2FYv%2Bfqyx07%2FTy8Und5vS2Wt6djgKjboolAcFQ4OD4R0KbfIQkJR%2BuPn4wHEvWODldE36cfOycCP0ROBDa16IJSzzYDcOWgeBZJRAoACLAwET%2BMZBIKSyvl%2FbUbu54ulUnx6ZPwCn7JpSNZ1kSy%2FRSQU6RydZF2gLoLdFKaabqihFdPmKHhKiRC70vtBH9uex4iiIn0g6ywSKxdD1vFvsYWpSfOzTa0SxjqGVHppF6eEURxFepidBSolYORE%2BzLzYtCxcx0E%2BNSlRgL8jdlniBEnxXx3mVovPfggwj1PiGAkUaWwV%2F4wOAaAoF7Yew1ZWq5St%2B9DYrPLmZCebU3bt421ILCozI1LC6wi6fuwDgvjc8%2BAqdHPe2wvXcz7BV7yO2G3Y2R6b1BrfGBmYPZJ5NQvMsVL8AwKtK5tt8c1sF57bLHICvPrKPCVasMIuddTvnwnlw6YwHF80JpV2Q%2F6J0N9Sd1AjT3NLzkF%2BTv5p8yC6xT5BOZEveg0Ew%2BgFhdHBgpLBYb%2BgvFEUWvMHVYuThCfbJY%2Fpzlz7f3CJWlXbIq17tBgUMG8ezkrzEFYa1ttYl14sp%2BGbrwY9AiMfRuiGDqFCTh6yfh4xcpc4EXGQTUbLZHjmz91o7VyEpK5hMPiBiW42KTN1rtaFzICdMkPofBGZN41uDU5mjDeaiD16psbVupCZloeCF6ek5mCS8f6tPorcko%2Bi8YPJa%2FLQMHDheDw%2BU0WSoeV4B6WCbwc4KFtX60JxqJx80BHXrXoRjYbdkoMlpc7VupAUfhbKGFsXMWnaFTlco9S4WhdyUiN%2Bf3FFOnBFVOUwV6S1WWw%2B4Pmwts%2FZDakfGz35OAkfVI3dkLO1L28Om59NdIQPuhK9cgsugnKJiZRJo%2FOx14sj0ocjoqvDckR0PsD66Prr8ExVSIaTixvC8neKbgg4YzfkDaJxZm6IzsdViZa75RM4L4Jy7m4IH2G9uCF9uCEmn93d69SMzgdUP69RYK%2FD8w2JZGC5zMzofBxVoSNd7SIal5mZMmX4wCqNnTVrZk5ZUM5mbka%2F5K4OwxcBEi9x%2FcZE%2BLDqFxye8eSMfklizXL4%2BUAqXRVxvlGRS%2BrqLknhI6tU%2B5oXQblERcRLe0ueiO5FKelL0qL%2FWGNWcRXGTLkmDbTVJq8jR3P6%2FRigEPm2S5fk0kRpCdGF8S4K6aFPPtY%2BrfoXx18h8pBtE75CB7Lbk8dJepBckBPd8nrrPet6dy%2BDiwUsvSo4WMIOX171RseDLcNqfs27zlF4MDtIiPqb0qG0dl3ULo0E97B0vaLXBbRJAJimLF%2FJkqQDRTJVoJpAVcZ2%2BHycyPe3lF1hEbVs3lGw5BMIfCqltQ0djD6Eu90NHSqEfS8o2KLM5lCR%2FvSRDgGLZlTWxnJZGkywtSI06W36y%2BMsXAVNCpD7uKRDTxhQIjMzFTKzMw1yi5OUuKwgQNBJcLmrKemgu9tgDX8TCsUqb0JhyDxyWaZLEbisrHng8i5rF8DduFEBt%2BTs70JNjlp6cjxoGRj3orYz0LIl%2Bgyx6hZik0dqDbEZ5U5cW9flu2x1pq31bW1tWdZYKvxtuZ8t624%2BTOr6Ng6I%2Bo61d%2FpIo1tldH0Ha2jwMJrAcBLOWtbXRUnsVHtvWVqL3xpHBxmHSwpcG2ttqXB%2BoqxTFa6aZkGJS2PL0CoVOT0p7ND2BoxXhR72g7xpjB83TulnB7Ru7a5VlzWN86ZS%2F1rZf3njHCDJcpUubtsq94zj%2BiLRvSVnErI%2FGiF1J0pl4QFan4acEahgyQO0CvArDY4G9Sx3FEA%2FnOFgeR7WG0j6EMy3zPtgxUHzFtUL8wnQ85CH5wFcjsq7oJbqinuh7mMU3VE15ZSAcY3wwLTKHpRg%2FGsoPP2ZuWye%2Bvx0cE79CbnNqXMA0Ch9ryxQ%2B3GFuo8dSjVtmDosV1XhZ8XLEJnIisQanRBQDG3MlklkNl7nlxoDSbBpbGtg0XuZRToULIVBolFyL8cSkNsZJLpAwpb1149f0PROcdX7b99ePl6pPPL%2BVJ68P5xZ8O31FX%2B3%2FjRvtI2a7WLWuveoS2pZshRzS2JaHmyo%2FcR921S6Qo7KdVnP3PnulW5lvwtK935DHHQUxA8z9QTRuDgNAEaBOyWEp3kAcQG210HAvElKQ5oPgIkSjiN8Nqa5AqRDdaJ7MBw7MILjWRDv%2BdjdlEwrjo%2BmC1JQ1LHA%2B89LG9fnbH%2BVMx%2F0V0Jyv8PUePz%2BOOzyCxqmLj%2BQODTZwByVk2rkdvCiSuVJKqCzjKriXKXMo6W1JAPt9JIMxPIjCGkLGzYf7DpO7vlIxi307LUXWxp%2FdCuPbmg%2Bm%2Bs77rPrrLE4JwAuqez705B%2BrTD9LTmkckjIGZ%2BusJdMSRFO4hp26%2BnzJ7G1SsrCFfRLYsVy7ewknY32OZhP4U%2BE3DQdmHwKj36mh%2FSyUpzAN4NL13tNfr4kHQ1jcJea5Dl%2BkijHr%2FQmKY1wgnwkL0LKzhhntJg3pOSOHtMuaZQXGmHovrYga8uk9aDLyPllEgHIajLHRctcFy1xTrSSv5IXlnwWjXktWu63aKnnojHfhd06YWJ2a%2BZ%2FkIKihqX1sY6l5THWaQmITzNNS4uMuKjwZIn%2BrEO7rCojWw5IjarZvKVCd3Zh13nNK640PedAqnazysQpYZWpAt5RG5MxrZkXerHN2vg042%2BxsCx1aTtOPDOMJZAavlOo6ltOoSXxMWELiJzCvLT5QT4fTBmwoWttUrHS5u03jsMa0AmiaAU7tT8J3BAZiK8Tf72cEHs6CVcTahVrjcmO8DvbgKChj43yzIwsaYKYtCAtrj1X812F2Y5AkyChVdxQHRaa%2BKTThlzN8%2FIwBTb84mJeXMyLi9lg3FHaSjsYhIupnVbed6XNeneuomgjpeZcxXfqJyrspbGDcRLZ9oon7yQK4vDChuqw4pEKH4f%2F3XeDUeoi0OkwwawXcSSeY9%2FPSqbQ6G1s4ihi%2Bo2XtOrm2ud%2F9xP1VNL2Jffx52P8xwHbNXNr0AZYLlWvoRO5D0weji21bjijv6Sgyn4LbNTOwU4dM8UhYzvEMVnCcL8pq%2BklDszCaeWUYmLOBOt6VVMEqfaM3Oll51Xiaz8QhxUJYf0WR0Ie3VEycebhuUxPzsISKcoQLBH%2FZqnTBE7dUZY6rFGWunuU1aIFs9fQOWkTVl7fLquit5F3bcLezcKqI1BYe4zW%2BCL341DIj9Ge1svUdv3nU2q1JN5wwXmA5tB38CiN2W83aCyE%2F44Mn6YPwfD1kqZ1BHTqpls1nx1%2BHHREe5y2Y8CeFtD3sX9KhsoqJ37IBuANFXPhurFSvUTkd9KygyUQytgAqmxqyae5xQ8DjFU9r663PEJ8G3YN%2Brnln7S4WVKlDhGANrdN13GQEUAnDlbCgv3LYGfj5dp3HeigcAcqS3Pb%2FD224prJKgB6p9hm%2Bo5rI%2F5H8YKCXBnsuQXX6SUitH1vRlbblkxd4NK2aWSFK5rOZPmOVjc%2Fhb20dyC2WfA28hJit3jX01LJjlYSaDqf4ZXp3QKIGK6aNrdCAPF7Op8mgLS6ADKGBSD%2BnTH3m2xXQZiYoRWauZ7ATHGG5yUgEPntw5d3Z3vYFHMGG7Pb3JFKURHnJ6Sj6cRJmIQuCgI48dEzdOA4XKxqsaBHfdgGF2VzDMrDDUUSbHwBNGMM5HZ0oHjd3Dvbklg0RyNu2Js3UNnvAmCuQ3fuZ7rMjrflzjdLZc64HQ8EFMedUy9dkFtAG2au%2B491sg94FNeDGnoxjCb%2FkJFOy2qxr%2F1%2BzLLjDhSVmF0%2BQGYYPOQMa2y1Jg2nt4yxEoT7l973NqNa2W%2FxfiebSebID8VsNbc1kLy9OylQLd5OmUbmzney54nWTwrC0NbIVy5932sS%2BwteV%2Fa7ADLCpGRPigg78fYVXvwZx6jit1psbLSKcFaRmDs%2FPg5R8Owm%2B9QCf8gePTFK22NhYAgS57rfiOL00hUqcbA%2FKXxYL7bQepnE7oDOzb8q4Tg68wH697l5B6dmTIGaaWv%2FDmHI7fQyCYWPCXjBF7aT%2B5L7ql4XxP4Zkf5D%2BtKoSZjEb5KN%2FpIozmm5vjoLx2Q7%2FUl8fBqwtMKS12u2xJB%2BkpY6R4sgpFO1hd9A0MIHdLJoCwugfPz18bcvX6%2BLMefp6QRXdM0cm%2BW5dACYxelqP2Uha04vulJ3S8uBbSZb1e1hz4s2ZlVUbcwGugwksqlyIGGByiPtyihdQ11IWMlXTyv3%2Fwc%3D"></iframe>
 
-Durante la clase, explicamos el flujo de trabajo anterior pero en la pizarra. Es la segunda iteración en la explicación de este flujograma. La idea es que, en cada repetición (hasta tres) vayamos aumentando el nivel de detalle de los pasos que se van dando. En esta segunda explicación describimos brevemente alguno de los pasos concretos a realizar con R y con QGIS. A continuación se muestra lo que se dibujó en la pizarra.
-
-![pizarra](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2024_2025/imagenes/pizarra.jpg)
 
 
 
