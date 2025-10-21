@@ -67,6 +67,7 @@ En este primer nivel de complejidad aprenderemos:
 + Los conteos de individuos por especie se muestran ya de manera agregada. Contamos el número de individuos que hay de cada especie y ya tenemos esos datos en una tabla. En realidad, nuestros datos se organizan de otra manera. En el siguiente nivel de complejidad en qué consiste esta diferencia.
 
 
+
 ## *Segundo nivel de complejidad*: conexión del flujo de trabajo con los datos reales que usaremos. Descripción en la pizarra.
 
 En este segundo nivel de complejidad explicaré con el apoyo de la pizarra y de manera más concreta lo que haremos durante esta práctica. Partiendo del esquema planteado en el primer nivel de complejidad, incorporaremos una serie de elementos nuevos:
@@ -120,6 +121,232 @@ A partir de estas dos fuentes de datos obtendremos el índice de Shannon para ca
 
 
 ## *Tercer nivel de complejidad*: traducción del flujo de trabajo a un programa de R
+
+
+
+### Bloque 1: Preparación del entorno de trabajo en R
+
++ **Objetivos de aprendizaje R**
+
+  + Configuración del directorio de trabajo.
+
+  + Instalación y carga de los paquetes necesarios.
+
++ **Objetivos de aprendizaje ecológico**
+
++ **Nivel de andamiaje**
+
+  + Alto. El profesor lo hace y los estudiantes repiten después.
+
+
+```R
+# ------------ 1.1 DIRECTORIO DE TRABAJO ------------
+# Establece directorio de trabajo
+# IMPORTANTE: Cambia esta ruta a la carpeta donde guardaste los archivos. Recuerda cambiar el sentido de la barra en función de tu sistema operativo
+setwd("/tu/ruta")
+
+# Verificar que estamos en el directorio correcto
+getwd()  # Debe mostrar la ruta que acabas de establecer
+
+# ------------ 1.2 INSTALACIÓN DE PAQUETES ------------
+# Los paquetes son "bibliotecas" que añaden funcionalidad a R. Recuerda que solo hay que instalarlos una vez, pero cuando cierres R tendrás que volver a cargarlos en memoria con la función library
+
+# sf: Para trabajar con datos vectoriales (puntos, polígonos)
+install.packages("sf")
+library(sf)
+
+# terra: Para trabajar con datos raster (mapas en formato cuadrícula)
+install.packages("terra")
+library(terra)
+
+# sqldf: Para manipular tablas como si fueran bases de datos
+install.packages("sqldf")
+library(sqldf)
+```
+
+
+
+### Bloque 2: Importación y transformación de datos de presencia de especies
+
++ **Objetivos de aprendizaje R**
+
+  + Importar datos tabulares con una componente espacial.
+
+  + Inspeccionar la estructura de datos.
+
+  + Aprender a reproyectar datos geográficos con R.
+
++ **Objetivos de aprendizaje ecológico**
+  + Comprender qué es GBIF y qué tipo de datos contiene.
+  + Entender las limitaciones de los datos de GBIF.
+  + Identificar los campos relevantes para nuestro estudio.
+  + Evaluar la cantidad de datos de presencia.
++ **Nivel de andamiaje**
+
+  + Medio-alto. El profesor lo hace casi todo y los estudiantes repiten después. Solo hay un paso en el que los estudiantes deben de recordar lo visto en la práctica anterior.
+
+#### Procedimiento en R
+
++ Primero usamos la función `read.csv` para cargar en R el archivo llamado `0118822-200613084148143.csv` que puedes descargar [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/refs/heads/main/geoinfo/csv_gbif_sierra_nevada.zip). Como es una función que ya hemos usado, trata de aplicarla tú en función de la experiencia previa. Para saber si el archivo `csv` tiene encabezado, cuáles son los delimitadores de campos y de decimales, solo tienes que abrirlo con un editor de texto. Si tienes dudas sobre cómo proceder, pregunta a algún compañero o a una IA. El objeto de R que deberá almacenar los datos de presencia se llama `presencias`. 
+
+```{R}
+# ------------ 2.1 IMPORTACIÓN DE DATOS DE GBIF ------------
+
+# GBIF contiene millones de registros de presencia de especies
+# Cada fila = una observación de una especie en un lugar y momento concretos
+
+presencias <- read.csv(#busca los parámetros necesarios para que este alínea funcione)
+```
+
++ Para comprobar que hemos importado bien los datos, observamos la estructura y contenidos de la tabla `presencias`.
+
+```R
+# ¿Cuántos registros de presencia tenemos?
+# la función nrow() cuenta el número de filas de un data frame (tabla)
+nrow(presencias)
+
+# Ver nombres de todas las columnas disponibles
+# la función names() devuelve los nombres de las columnas de un data frame
+names(presencias)
+
+# Ver las primeras 6 filas para entender la estructura
+# la función head() muestra las primeras filas de un data frame
+head(presencias)
+
+```
++ A partir de la información anterior,
+  + ¿Qué columnas nos indican la especie del punto de presencia en cuestión?
+  + ¿Cuáles contienen información sobre la ubicación geográfica del punto? 
+  + ¿En qué sistema de coordenadas se representa la ubicación espacial de cada punto?
+
++ Las respuestas a las preguntas anteriores nos permiten saber cuántas especies diferentes hay en la tabla:
+
+```R
+# Ver las primeras 6 filas para entender la estructura
+# la función head() muestra las primeras filas de un data frame
+head(presencias)
+
+# ¿Cuántas especies diferentes aparecen?
+# la función length() cuenta el número de elementos en un vector (que puede ser una tabla o una columna)
+# la función unique() devuelve los valores únicos de un vector. En este caso de la columna scientificName
+length(unique(presencias$scientificName))
+
+```
+
++ Para terminar este bloque, te propongo que crees una gráfica de barras que muestre la información de abundancia de cada especie como lo hacen las gráficas de "rango abundancia" que vimos en teoría. Es decir, un gráfico parecido al que se muestra a continuación
+
+
+
+
+
+
+
+
+
+
+
+### Bloque 3: Importación de la capa de comunidades ecológicas.
+
++ **Objetivos de aprendizaje R**
+
+  + Importar datos geográficos vectoriales (shapefile)
+
+  + Inspeccionar la estructura de datos.
+
+  + Recordar el concepto de sistema de referencia espacial
+
+  + Conocer los formatos de R para almacenar información geográfica.
++ **Objetivos de aprendizaje ecológico**
+  + Entender la estructura de datos del mapa de vegetación.
+  + Entender las asunciones que hacemos al considerar que los polígonos del mapa de vegetación son comunidades ecológicas.
++ **Nivel de andamiaje**
+
+  + Alto. El profesor lo hace y los estudiantes repiten después.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Bloque 4: Unión espacial y preparación de datos para el cálculo de la diversidad
+
++ **Objetivos de aprendizaje R**
+
+  + Realizar una unión espacial (spatial join) entre puntos y polígonos (asignar a cada punto el polígono en el que se encuentra)
+
+  + Filtrar atributos relevantes
+
++ **Objetivos de aprendizaje ecológico**
+  + Entender que los datos con los que trabajamos son incompletos.
+  + Comprender las implicaciones que tiene la unión espacial que vamos a hacer.
+
++ **Nivel de andamiaje**
+
+  + Alto. El profesor lo hace y los estudiantes repiten después.
+
+
+
+### Bloque 5: Cálculo de abundancias relativas de especies por comunidad
+
++ **Objetivos de aprendizaje R**
+
+  + Entender algunas operaciones básicas de SQL con bases de datos (agrupar por campos, relación entre tablas)
++ **Objetivos de aprendizaje ecológico**
+  + Comprender bien qué la diversidad depende del número de especies y de la abundancia relativa de cada especie.
+  + Calcular la abundancia y la frecuencia relativa.
++ **Nivel de andamiaje**
+
+  + Alto. El profesor lo hace y los estudiantes repiten después.
+
+
+
+### Bloque 6: Cálculo del índice de Shannon por comunidad
+
++ **Objetivos de aprendizaje R**
+
+  + Entender algunas operaciones básicas de SQL con bases de datos (agrupar por campos, relación entre tablas)
+  + Comprender cómo agrupar los valores intermedios para obtener el índice de Shannon para cada polígono.
+  + Entender el concepto de unión de tablas.
++ **Objetivos de aprendizaje ecológico**
+  + Aplicar el índice de Shannon para cada polígono (=comunidad)
++ **Nivel de andamiaje**
+
+  + Alto. El profesor lo hace y los estudiantes repiten después.
+
+
+
+### Bloque 7: Integración de resultados y exportación a formato SIG (vectorial y raster)
+
++ **Objetivos de aprendizaje R**
+
+  + Fusionar resultados tabulares (tabla con valores de H para cada comunidad) con datos espaciales (distribución de comunidades) para obtener el mapa final.
+  + Convertir entre formatos vectorial y raster.
+  + Exportar para visualizar fácilmente en SIG
++ **Objetivos de aprendizaje ecológico**
+  + Entender las diferencias entre el mapa de inicial de comunidades y el resultado final que asigna a cada polígono un valor del índice de Shannon.
++ **Nivel de andamiaje**
+
+  + Alto. El profesor lo hace y los estudiantes repiten después.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
