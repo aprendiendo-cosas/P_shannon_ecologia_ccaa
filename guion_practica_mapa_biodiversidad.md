@@ -1,10 +1,10 @@
 # Construcción de un mapa de diversidad (índice de Shannon) de Sierra Nevada
 
 > + **_Tipo de material_**: <span style="display: inline-block; font-size: 12px; color: white; background-color: #4caf50; border-radius: 5px; padding: 5px; font-weight: bold;"> Prácticas</span> 
-> + **_Versión_**: 2024-2025
+> + **_Versión_**: 2025-2026
 > + **_Asignatura (grado)_**: Ecología (Ciencias ambientales). 
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
-> + **_Duración_**: 1 sesión de 1.5 horas en clase y otras 2 horas en casa.
+> + **_Duración_**: 2 sesiones de 2 horas y otras 2 horas en casa.
 
 
 
@@ -16,7 +16,7 @@ Esta práctica tiene los siguientes objetivos:
   + Aprender a generar mapas de diversidad biológica. Mapas de distribución del índice de Shannon.
   + Reconocer patrones de distribución de la diversidad en un territorio concreto (Sierra Nevada).
   + Identificar las causas de los patrones anteriores.
-  + Cuantificar la diversidad de los distintos tipos de ecosistemas con los que estamos trabajando en las prácticas. Concretamente, cada equipo obtendrá un valor de diversidad promedio del ecosistema con el que trabaja. 
+  + Cuantificar la diversidad de los distintos tipos de ecosistemas con los que estamos trabajando en las prácticas. Concretamente, cada estudiante obtendrá un valor de diversidad promedio del ecosistema con el que trabaja. 
 
 + Instrumentales:
   + Afianzar nuestro conocimiento de SIG.
@@ -28,15 +28,39 @@ Esta práctica tiene los siguientes objetivos:
 
 ## Contextualización ecológica
 
-Esta sesión práctica está muy relacionada con el tema en el que hablamos de la diversidad de las [comunidades ecológicas](https://rawcdn.githack.com/aprendiendo-cosas/Te_comunidades_diversidad_ecologia_ccaa/2024_2025/guion_comunidades_diversidad.html). En concreto, usaremos los conocimientos adquiridos en esa sesión para construir un mapa de biodiversidad de Sierra Nevada. Esto quiere decir, que debes de repasar dichos conceptos con objeto de que el aprendizaje de esta práctica sea realmente efectivo.
+Esta sesión práctica está muy relacionada con el tema en el que hablamos de la diversidad de las [comunidades ecológicas](https://rawcdn.githack.com/aprendiendo-cosas/Te_comunidades_diversidad_ecologia_ccaa/main/guion_comunidades_diversidad.html). En concreto, usaremos los conocimientos adquiridos en esa sesión para construir un mapa de biodiversidad de Sierra Nevada. Esto quiere decir, que debes de repasar dichos conceptos con objeto de que el aprendizaje de esta práctica sea realmente efectivo.
 
-Para cuantificar la diversidad biológica se pueden utilizar muchos índices. En nuestro caso usaremos el denominado índice de Shannon-Wiever, que es uno de los más robustos y comunmente utilizados. Para su cálculo se necesita la siguiente información:
+Disponer de un mapa que muestre cómo se distribuye la diversidad en el territorio es muy útil por muchas razones. En primer lugar, nos ayuda a leer el paisaje con la mirada de la ecología. Como sabemos que la diversidad está relacionada con elementos clave como la resistencia y la resiliencia, sabiendo cómo se distribuye la diversidad estamos también adquiriendo información sobre cómo se distribuyen las propiedades anteriores en el territorio. Esta información es también muy valiosa para gestionar el territorio. Por ejemplo, los lugares en los que hay baja diversidad, pero tienen las condiciones ambientales adecuadas para que sea alta, requerirán actuaciones de restauración por nuestra parte.
 
-+ Delimitación espacial de la comunidad para la que queremos calcular el índice de diversidad.
-+ Listado de especies existente en esa comunidad.
-+ Abundancia de cada especie en dicha comunidad.
+Para cuantificar la diversidad biológica se pueden utilizar muchos índices. En nuestro caso usaremos el denominado índice de Shannon-Wiever, que es uno de los más robustos y comunmente utilizados.
+
+
+
+## Metodología docente y flujo de trabajo
+
+Como habrás leído en el apartado de objetivos, nos planteamos cuestiones muy diferentes en esta práctica. Por un lado hay objetivos ecológicos y por otros hay también objetivos instrumentales relacionados con el manejo de SIG y de R. Para satisfacer ambos tipos de objetivos seguiremos una metodología docente que combina estas dos:
+
+- **Aproximación de complejidad creciente**: Cuando aprendemos algo nuevo, es útil ir incorporando ideas y conceptos poco a poco, aumentando la complejidad hasta llegar al "destino final" del aprendizaje. En nuestro caso, explicaré la metodología que seguiremos usando tres niveles de complejidad: uno con una presentación, otro en la pizarra y finalmente habrá disponible un esquema digital muy detallado. Este flujo de trabajo describe los pasos que seguiremos con R para generar el mapa de diversidad.
+- **Enseñanza incremental:** Este método docente implica dividir las tareas en bloques cuyo abordaje implica satisfacer objetivos de aprendizaje específicos. Además, para avanzar en el flujo de trabajo será necesario ir completando los bloques de manera secuencial. Aplicar esta técnica implica que el guión se divide en bloques específicos y explicados de manera individual.
+- **Andamiaje:** Esto consiste en que durante el aprendizaje yo os dejaré andamios en forma de pistas, sugerencias, pequeños retos, etc. para mejorar vuestras habilidades con R. No os daré el código completo, sino que os daré apoyos temporales que os ayudarán a realizar tareas que aún no sabéis hacer de forma autónoma. A lo largo de los bloques en los que se divide la metodología aparecerán varios de estos andamios. Se irán retirando progresivamente conforme vayáis aprendiendo. En los últimos bloques habrá menos pistas. 
+
+Atendiendo a todo lo anterior, el guión se divide en los siguientes apartados a partir de aquí:
+
++ Primer nivel de complejidad: ideas generales del flujo de trabajo a seguir y conexión la teoría.
++ Segundo nivel de complejidad: conexión del flujo de trabajo con los datos reales que usaremos. Descripción en la pizarra.
++ Tercer nivel de complejidad: traducción del flujo de trabajo a un programa de R.
+
+Vamos a ello:
+
+## Primer nivel de complejidad: ideas generales del flujo de trabajo a seguir y conexión con la teoría.
 
 La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/view/ACfMCVaCBbJVoGwMJZaY) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2024_2025/presentacion/1_mapa_biodiv_ecologia_ccaa.exe) para Windows y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2024_2025/presentacion/1_mapa_biodiv_ecologia_ccaa.zip) para Mac. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2024_2025/presentacion/1_mapa_biodiv_ecologia_ccaa.pdf) la tienes en formato pdf. En esta presentación se describe de manera muy general cómo se realizará el mapa de biodiversidad. Se trata de la primera explicación de este tipo que realizamos durante la clase. 
+
+En este primer nivel de complejidad aprenderemos:
+
++ Cómo podemos calcular el índice de Shannon de una comunidad a partir de unos datos tomados en campo.
++ Algunas nociones básicas de bases de datos relacionales. Vemos concretamente cómo se agrupan datos por un campo y cómo se unen tablas. Estos conceptos serán muy útiles en esta práctica.
++ Los conteos de individuos por especie se muestran ya de manera agregada. Contamos el número de individuos que hay de cada especie y ya tenemos esos datos en una tabla. En realidad, nuestros datos se organizan de otra manera. En el siguiente nivel de complejidad en qué consiste esta diferencia.
 
 
 
@@ -44,6 +68,12 @@ La siguiente presentación muestra los conceptos básicos necesarios para hacer 
 <iframe src="https://prezi.com/p/embed/kCzf6valb3SyKKH5ZSUG/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="515" width="560"></iframe>
 
 
+
+Para su cálculo se necesita la siguiente información:
+
++ Delimitación espacial de la comunidad para la que queremos calcular el índice de diversidad.
++ Listado de especies existente en esa comunidad.
++ Abundancia de cada especie en dicha comunidad.
 
 ## Metodología y flujo de trabajo
 
@@ -77,11 +107,9 @@ Durante la clase, explicamos el flujo de trabajo anterior pero en la pizarra. Es
 ![pizarra](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2024_2025/imagenes/pizarra.jpg)
 
 
-Este flujo de trabajo se ejecuta usando R. R es un lenguaje de programación muy frecuentemente utilizado en ámbitos científicos. Se usa para hacer análisis de datos, dibujar gráficas, mapas, etc. En esta práctica nos familiarizaremos un poco con este lenguaje. Concretamente usaremos un interfaz gráfico llamado RStudio. [Aquí](https://www.youtube.com/watch?v=v0rBJ86aMa8) tienes un breve vídeo en el que cuento cómo instalar QGIS, R y Rstudio.
 
 
-
-El flujo de trabajo anterior se realiza ejecutando secuencialmente las líneas del siguiente bloque de código. En la clase explicamos por tercera vez el flujo de trabajo a realizar usando este script:
+El flujo de trabajo anterior se realiza ejecutando secuencialmente las líneas del siguiente bloque de código con R. En la clase explicamos por tercera vez el flujo de trabajo a realizar usando este script:
 
 ```R
 # Este script genera un mapa del índice de Shannon a partir de los datos de presencias de especies existentes en GBIF y de un mapa de vegetación de Sierra Nevada
