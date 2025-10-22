@@ -121,6 +121,8 @@ A partir de estas dos fuentes de datos obtendremos el índice de Shannon para ca
 + **Nivel de andamiaje**
 
   + Alto. El profesor lo hace y los estudiantes repiten después.
+  
+  
 
 
 ```R
@@ -147,6 +149,9 @@ library(terra)
 install.packages("sqldf")
 library(sqldf)
 ```
+
+
+
 
 
 ### Bloque 2: Importación y transformación de datos de presencia de especies
