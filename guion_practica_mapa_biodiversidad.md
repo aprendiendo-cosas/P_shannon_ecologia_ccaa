@@ -56,9 +56,9 @@ Vamos a ello:
 
 ## *Primer nivel de complejidad*: ideas generales del flujo de trabajo a seguir y conexión con la teoría.
 
-La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/view/ACfMCVaCBbJVoGwMJZaY) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2024_2025/presentacion/1_mapa_biodiv_ecologia_ccaa.exe) para Windows y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2024_2025/presentacion/1_mapa_biodiv_ecologia_ccaa.zip) para Mac. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2024_2025/presentacion/1_mapa_biodiv_ecologia_ccaa.pdf) la tienes en formato pdf. En esta presentación se describe de manera muy general cómo se realizará el mapa de biodiversidad. Se trata de la primera explicación de este tipo que realizamos durante la clase. 
+La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/view/cUj8WyKbNsFotcpylja0/) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_ecologia_ccaa.exe) para Windows y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_ecologia_ccaa.zip) para Mac. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_ecologia_ccaa.pdf) la tienes en formato pdf. En esta presentación se describe de manera muy general cómo se realizará el mapa de biodiversidad. Se trata de la primera explicación de este tipo que realizamos durante la clase. 
 
-<iframe src="https://prezi.com/p/embed/kCzf6valb3SyKKH5ZSUG/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="515" width="560"></iframe>
+<iframe src="https://prezi.com/p/embed/cUj8WyKbNsFotcpylja0/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="515" width="560"></iframe>
 
 En este primer nivel de complejidad aprenderemos:
 
@@ -76,13 +76,21 @@ En este segundo nivel de complejidad explicaré con el apoyo de la pizarra y de 
 + Algunas funcionalidades de R relacionadas con los SIG. Es decir, cómo R puede ser un SIG muy potente.
 + Cómo se agrega la información numérica en las tablas para calcular el índice de Shannon.
 
- A continuación se muestra lo que se dibujó en la pizarra. Hay varias versiones:
+A continuación se muestra lo que se dibujó en la pizarra. Hay varias versiones:
 
 *Versión más pausada hecha el día de antes de la práctica en la pizarra de mi despacho...*
 
-![pizarra](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/pizarra_.jpg)
+![pizarra](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/esquemas_pizarra/pizarra_despacho.jpg)
 
+*Versión algo más cutre hecha en la pizarra digital de la clase en la sesión del GM-2*
 
+![Diapo1](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/esquemas_pizarra/Diapositiva1.jpeg)
+
+![Diapo2](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/esquemas_pizarra/Diapositiva2.jpeg)
+
+![Diapo3](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/esquemas_pizarra/Diapositiva3.jpeg)
+
+![Diapo4](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/esquemas_pizarra/Diapositiva4.jpeg)
 
 A continuación se describen con más detalle las fuentes de datos que utilizaremos en esta práctica. También se ofrecen los enlaces para descargar los datos.
 
@@ -90,7 +98,6 @@ A continuación se describen con más detalle las fuentes de datos que utilizare
 Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada [GBIF](https://www.gbif.org/) (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2024_2025/geoinfo/csv_gbif_sierra_nevada.zip) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada en el mismo formato en el que se obtienen de GBIF. Usaremos este archivo para generar el mapa de biodiversidad de Sierra Nevada.
 
 ![puntos](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2024_2025/imagenes/puntos.png)
-
 
 
 ### Distribución de las comunidades ecológicas que conforman Sierra Nevada.
@@ -106,14 +113,13 @@ A partir de estas dos fuentes de datos obtendremos el índice de Shannon para ca
 
 
 
-
-
 ## *Tercer nivel de complejidad*: traducción del flujo de trabajo a un programa de R
 
 
 
 ### Bloque 1: Preparación del entorno de trabajo en R
 
+#### Características del bloque
 + **Objetivos de aprendizaje R**
 
   + Configuración del directorio de trabajo.
@@ -125,7 +131,6 @@ A partir de estas dos fuentes de datos obtendremos el índice de Shannon para ca
 + **Nivel de andamiaje**
 
   + Alto. El profesor lo hace y los estudiantes repiten después.
-  
   
 
 
@@ -156,10 +161,9 @@ library(sqldf)
 
 
 
-
-
 ### Bloque 2: Importación y transformación de datos de presencia de especies
 
+#### Características del bloque
 + **Objetivos de aprendizaje R**
 
   + Importar datos tabulares con una componente espacial.
@@ -179,16 +183,14 @@ library(sqldf)
 
 #### Procedimiento en R
 
-+ Primero usamos la función `read.csv` para cargar en R el archivo llamado `0118822-200613084148143.csv` que ya debes haber descargado en la sección anterior. Como es una función que ya hemos usado, trata de aplicarla tú en función de la experiencia previa. Para saber si el archivo `csv` tiene encabezado, cuáles son los delimitadores de campos y de decimales, solo tienes que abrirlo con un editor de texto. Si tienes dudas sobre cómo proceder, pregunta a algún compañero o a una IA. El objeto de R que deberá almacenar los datos de presencia se llama `presencias`. 
++ Primero usamos la función `read.csv` para cargar en R el archivo llamado `0118822-200613084148143.csv` que ya debes haber descargado en la sección anterior. Como es una función que ya hemos usado, trata de aplicarla tú en función de la experiencia previa. Para saber si el archivo `csv` tiene encabezado, cuáles son los delimitadores de campos y de decimales, solo tienes que abrirlo con un editor de texto. El objeto de R que deberá almacenar los datos de presencia se llama `presencias`. 
+<details>
+<summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo</summary>
 
-```{R}
-# ------------ 2.1 IMPORTACIÓN DE DATOS DE GBIF ------------
-
-# GBIF contiene millones de registros de presencia de especies
-# Cada fila = una observación de una especie en un lugar y momento concretos
-
-presencias <- read.csv(#busca los parámetros necesarios para que este alínea funcione)
+```r
+presencias <- read.csv("0118822-200613084148143.csv", header = TRUE, sep = "\t", dec = ".")
 ```
+</details>
 
 + Para comprobar que hemos importado bien los datos, observamos la estructura y contenidos de la tabla `presencias`.
 
@@ -206,6 +208,7 @@ names(presencias)
 head(presencias)
 
 ```
+
 + A partir de la información anterior,
   + ¿Qué columnas nos indican la especie del punto de presencia en cuestión?
   + ¿Cuáles contienen información sobre la ubicación geográfica del punto? 
@@ -225,7 +228,7 @@ length(unique(presencias$scientificName))
 
 ```
 
-+ Para terminar este bloque, te propongo que crees una gráfica de barras que muestre la información de abundancia de cada especie como lo hacen las gráficas de "rango abundancia" que vimos en teoría. Es decir, un gráfico parecido al que se muestra a continuación. Busca información en internet o pregunta a tu IA favorita. Recuerda que partes de la tabla `presencias`. Para generar la gráfica tienes que dar los siguientes pasos:
++ A continuación te propongo una actividad voluntaria que no es necesaria para el objetivo final de la práctica. La idea es que crees una gráfica de barras que muestre la información de abundancia de cada especie como lo hacen las gráficas de "rango abundancia" que vimos en teoría. Es decir, un gráfico parecido al que se muestra a continuación. Busca información en internet o pregunta a tu IA favorita. Recuerda que partes de la tabla `presencias`. Para generar la gráfica tienes que dar los siguientes pasos:
 
   + Generar una tabla que cuente la abundancia de cada especie. Llama a esa tabla `abundancias`. Para obtenerla puedes usar una función llamada `table `que cuenta las ocurrencias de cada valor de una tabla.
   + Luego ordena esa tabla de mayor a menor. Crea una tabla llamada `abundancias_ordenadas` usando la función `sort`.
@@ -235,37 +238,94 @@ length(unique(presencias$scientificName))
 
 ![equitatividad](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/refs/heads/main/imagenes/equitatividad.png)
 
+<details>
+<summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo</summary>
 
+```r
+# Generar histograma de abundancias de especies ordenadas de mayor a menor abundancia en el eje x
 
+# la función table() cuenta las ocurrencias de cada valor en un vector
+abundancias <- table(presencias$scientificName)
 
+# ordenar las abundancias de mayor a menor usando la función sort()
+abundancias_ordenadas <- sort(abundancias, decreasing = TRUE)
+
+# Genera una gráfica de barras mostrando las abundancias de especies ordenadas de mayor a menor abundancia en el eje x.
+barplot(abundancias_ordenadas,
+        las = 2,               # Rota los nombres de las especies para que se vean mejor
+        col = "lightblue",     # Color de las barras
+        main = "Abundancia de especies registradas", # Título del gráfico
+        ylab = "Número de registros",                # Etiqueta del eje y
+        xlab = "Especies")                           # Etiqueta del eje x
+
+```
+</details>
 
 Una vez que obtengas el gráfico, nos preguntamos: ¿dirías que Sierra Nevada en general es muy equitativa o poco? ¿ves razonable los resultados obtenidos en la gráfica?
+
++ Si no te has animado a generar el gráfico, sigue por aquí.
++ El siguiente paso nos permite transformar las coordenadas de los puntos de presencia a coordenadas UTM. Los datos de GBIF vienen con coordenadas geográficas (grados, minutos, segundos). Esta forma de representar algo en el espacio es poco útil si queremos medir distancias o hacer operaciones espaciales. Por eso es muy recomendable reproyectar esta capa a un sistema de coordenadas plano. Uno de los más comunes es el llamado `EPSG:23030`. 
+
+
+# ==== BLOQUE 2: Reproyectar coordenadas ====
+# OBJETIVO: Convertir lat/lon a UTM para análisis espacial
+
+# 1. Convertir dataframe a objeto espacial
+# COMPLETA: ¿Qué columnas contienen las coordenadas?
+presencias_geo <- st_as_sf(presencias, 
+                           coords = c("_______", "_______"),
+                           crs = 4326)  # WGS84
+
+# 2. PAUSA: Antes de ejecutar, predice:
+#    ¿Cuántos puntos debería tener presencias_geo?
+#    Escribe tu predicción: _______
+
+# 3. Verificar resultado
+print(paste("Puntos creados:", nrow(presencias_geo)))
+
+# 4. PREGUNTA PARA DISCUTIR EN PAREJA (2 min):
+#    ¿Por qué necesitamos crs=4326? ¿Qué significa?
+
+# 5. Reproyectar a UTM
+# COMPLETA el código usando st_transform()
+presencias_utm <- _______
+
+
+
+
 
 
 
 
 ### Bloque 3: Importación de la capa de comunidades ecológicas.
 
+#### Características del bloque
 + **Objetivos de aprendizaje R**
-
   + Importar datos geográficos vectoriales (shapefile)
-
   + Inspeccionar la estructura de datos.
-
   + Recordar el concepto de sistema de referencia espacial
-
   + Conocer los formatos de R para almacenar información geográfica.
 + **Objetivos de aprendizaje ecológico**
   + Entender la estructura de datos del mapa de vegetación.
   + Entender las asunciones que hacemos al considerar que los polígonos del mapa de vegetación son comunidades ecológicas.
 + **Nivel de andamiaje**
-
   + Alto. El profesor lo hace y los estudiantes repiten después.
+
+#### Procedimiento en R
+
+
+
+
+
+
+
+
 
 
 
 ### Bloque 4: Unión espacial y preparación de datos para el cálculo de la diversidad
 
+#### Características del bloque
 + **Objetivos de aprendizaje R**
 
   + Realizar una unión espacial (spatial join) entre puntos y polígonos (asignar a cada punto el polígono en el que se encuentra)
@@ -280,10 +340,12 @@ Una vez que obtengas el gráfico, nos preguntamos: ¿dirías que Sierra Nevada e
 
   + Alto. El profesor lo hace y los estudiantes repiten después.
 
+#### Procedimiento en R
 
 
 ### Bloque 5: Cálculo de abundancias relativas de especies por comunidad
 
+#### Características del bloque
 + **Objetivos de aprendizaje R**
 
   + Entender algunas operaciones básicas de SQL con bases de datos (agrupar por campos, relación entre tablas)
@@ -294,10 +356,12 @@ Una vez que obtengas el gráfico, nos preguntamos: ¿dirías que Sierra Nevada e
 
   + Alto. El profesor lo hace y los estudiantes repiten después.
 
+#### Procedimiento en R
 
 
 ### Bloque 6: Cálculo del índice de Shannon por comunidad
 
+#### Características del bloque
 + **Objetivos de aprendizaje R**
 
   + Entender algunas operaciones básicas de SQL con bases de datos (agrupar por campos, relación entre tablas)
@@ -309,10 +373,12 @@ Una vez que obtengas el gráfico, nos preguntamos: ¿dirías que Sierra Nevada e
 
   + Alto. El profesor lo hace y los estudiantes repiten después.
 
+#### Procedimiento en R
 
 
 ### Bloque 7: Integración de resultados y exportación a formato SIG (vectorial y raster)
 
+#### Características del bloque
 + **Objetivos de aprendizaje R**
 
   + Fusionar resultados tabulares (tabla con valores de H para cada comunidad) con datos espaciales (distribución de comunidades) para obtener el mapa final.
@@ -324,10 +390,10 @@ Una vez que obtengas el gráfico, nos preguntamos: ¿dirías que Sierra Nevada e
 
   + Alto. El profesor lo hace y los estudiantes repiten después.
 
-
+#### Procedimiento en R
 
 ## Resultados esperables
-El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de un fichero ráster en el que se ha asignado el valor del índice Shannon a cada polígono del mapa de vegetación inicial. El mapa se ha obtenido de la siguiente forma:
+El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de una representacióin del fichero vectorial obtenido. En esta representación se ha asignado el valor del índice Shannon a cada polígono del mapa de vegetación inicial. El mapa se ha obtenido de la siguiente forma:
 
 + Cargamos en QGIS la capa raster obtenida al final del flujo de trabajo anterior.
 + Clasificamos en función de los valores numéricos de cada píxel de la siguiente manera:
@@ -336,8 +402,7 @@ El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de u
   + Modo de clasificación: quantiles
 
 
-
-![shannon](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2024_2025/imagenes/shannon_snev.png)
+![shannon](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/shannon_snev.png)
 
 
 
@@ -411,7 +476,7 @@ En los campos *_mean* y *_stdev* se almacenarán respectivamente los valores pro
 + ¿En qué categoría podríamos poner los bosques de ribera? ¿por qué no aparecen en la lista?
 + También tenéis que pensar una forma de representar la diversidad de vuestro ecosistema en el trabajo de manera que se pueda comparar fácilmente con los demás ecosistemas.
 
-
+Además de este resultado numérico para cada ecosistema, también será interesante que creéis un mapa de diversidad de todas las comunidades ocupadas por vuestro ecosistema. Esto os permitirá saber si, por ejemplo, los encinares del sur son más o menos diversos que los del norte. Para hacer esto bastará con que recortéis en Qgis la capa que hemos obtenido en esta práctica en formato vectorial usando como molde la delimitación de vuestro ecosistema que está contenido en la capa de ecosistemas. Es decir, tendréis que hacer una operación `clip` en la que la capa destino es la que contiene la información del índice de Shannon y la que hace de "molde" es el mapa de ecosistemas. 
 
 
 
