@@ -133,6 +133,10 @@ A partir de estas dos fuentes de datos obtendremos el índice de Shannon para ca
   + Alto. El profesor lo hace y los estudiantes repiten después.
   
 
+#### Procedimiento en R
+
+ 
+
 
 ```R
 # ------------ 1.1 DIRECTORIO DE TRABAJO ------------
@@ -167,10 +171,7 @@ library(sqldf)
 + **Objetivos de aprendizaje R**
 
   + Importar datos tabulares con una componente espacial.
-
   + Inspeccionar la estructura de datos.
-
-  + Aprender a reproyectar datos geográficos con R.
 
 + **Objetivos de aprendizaje ecológico**
   + Comprender qué es GBIF y qué tipo de datos contiene.
@@ -178,7 +179,6 @@ library(sqldf)
   + Identificar los campos relevantes para nuestro estudio.
   + Evaluar la cantidad de datos de presencia.
 + **Nivel de andamiaje**
-
   + Medio-alto. El profesor lo hace casi todo y los estudiantes repiten después. Solo hay un paso en el que los estudiantes deben de recordar lo visto en la práctica anterior.
 
 #### Procedimiento en R
@@ -188,7 +188,7 @@ library(sqldf)
 <summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo</summary>
 
 ```r
-presencias <- read.csv("0118822-200613084148143.csv", header = TRUE, sep = "\t", dec = ".")
+presencias <- read.csv("0118822-200613084148143.csv", header = TRUE, sep = ",", dec = ".")
 ```
 </details>
 
@@ -212,7 +212,6 @@ head(presencias)
 + A partir de la información anterior,
   + ¿Qué columnas nos indican la especie del punto de presencia en cuestión?
   + ¿Cuáles contienen información sobre la ubicación geográfica del punto? 
-  + ¿En qué sistema de coordenadas se representa la ubicación espacial de cada punto?
 
 + Las respuestas a las preguntas anteriores nos permiten saber cuántas especies diferentes hay en la tabla:
 
@@ -264,31 +263,23 @@ barplot(abundancias_ordenadas,
 Una vez que obtengas el gráfico, nos preguntamos: ¿dirías que Sierra Nevada en general es muy equitativa o poco? ¿ves razonable los resultados obtenidos en la gráfica?
 
 + Si no te has animado a generar el gráfico, sigue por aquí.
-+ El siguiente paso nos permite transformar las coordenadas de los puntos de presencia a coordenadas UTM. Los datos de GBIF vienen con coordenadas geográficas (grados, minutos, segundos). Esta forma de representar algo en el espacio es poco útil si queremos medir distancias o hacer operaciones espaciales. Por eso es muy recomendable reproyectar esta capa a un sistema de coordenadas plano. Uno de los más comunes es el llamado `EPSG:23030`. 
++ La tabla que hemos importado de GBIF tiene dos campos con coordenadas. Pero R no ha reconocido este objeto como una capa georreferenciada de manera automática. Tenemos que decirle explícitamente que el objeto importado es una capa geográfica. Eso se hace aplicando la función `st_as_sf` que convierte una tabla común (data frame) en un objeto espacial de R. El código es el siguiente. En el código solo tienes que reemplazar los guiones por los nombres de los campos que muestran las coordenadas X e Y en la tabla de `presencias`. El otro argumento de la función es `crs`. Ahí ponemos el código del sistema de coordenadas en el que están los datos de `presencias`: 23030. El objeto resultante se llama `presencias_23030`tiene el mismo número de filas y columnas que `presencias`. La única diferencia es que es un objeto espacial.
 
+```R
+# Convertir las coordenadas UTM en un objeto espacial usando la función st_as_sf
+presencia_23030 <- st_as_sf(presencias, coords = c("----", "----"),crs = 23030)
+```
 
-# ==== BLOQUE 2: Reproyectar coordenadas ====
-# OBJETIVO: Convertir lat/lon a UTM para análisis espacial
++ Como tal objeto espacial, podemos representarlo gráficamente. Para dibujar un mapa sencillo que nos de una idea del aspecto de nuestros datos, podemos usar las funciones `plot` y `st_geometry`. Este último argumento indica a R que use la geometría del objeto para hacer la visualización. Tienes el código a continuación
 
-# 1. Convertir dataframe a objeto espacial
-# COMPLETA: ¿Qué columnas contienen las coordenadas?
-presencias_geo <- st_as_sf(presencias, 
-                           coords = c("_______", "_______"),
-                           crs = 4326)  # WGS84
-
-# 2. PAUSA: Antes de ejecutar, predice:
-#    ¿Cuántos puntos debería tener presencias_geo?
-#    Escribe tu predicción: _______
-
-# 3. Verificar resultado
-print(paste("Puntos creados:", nrow(presencias_geo)))
-
-# 4. PREGUNTA PARA DISCUTIR EN PAREJA (2 min):
-#    ¿Por qué necesitamos crs=4326? ¿Qué significa?
-
-# 5. Reproyectar a UTM
-# COMPLETA el código usando st_transform()
-presencias_utm <- _______
+```R
+# Hacer un mapa sencillo para ver si tiene sentido geográficamente
+plot(st_geometry(presencia_23030), 
+     pch = 20,                  # Tipo de símbolo (puntos pequeños)
+     cex = 0.1,                 # Tamaño de puntos
+     col = "darkgreen",         # Color
+     main = "Presencias de especies en Sierra Nevada")
+```
 
 
 
