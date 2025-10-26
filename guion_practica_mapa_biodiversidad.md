@@ -95,13 +95,13 @@ A continuación se muestra lo que se dibujó en la pizarra. Hay varias versiones
 A continuación se describen con más detalle las fuentes de datos que utilizaremos en esta práctica. También se ofrecen los enlaces para descargar los datos.
 
 ### Información de distribución de especies en Sierra Nevada a partir de GBIF
-Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada [GBIF](https://www.gbif.org/) (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2024_2025/geoinfo/csv_gbif_sierra_nevada.zip) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada en el mismo formato en el que se obtienen de GBIF. Usaremos este archivo para generar el mapa de biodiversidad de Sierra Nevada.
+Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada [GBIF](https://www.gbif.org/) (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/geoinfo/csv_gbif_sierra_nevada.zip) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada en el mismo formato en el que se obtienen de GBIF. Usaremos este archivo para generar el mapa de biodiversidad de Sierra Nevada.
 
 ![puntos](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2024_2025/imagenes/puntos.png)
 
 
 ### Distribución de las comunidades ecológicas que conforman Sierra Nevada.
-Este paso es el más complejo conceptualmente, ya que las comunidades no tienen un límite espacial preciso. Es decir, están conectadas entre sí y no es fácil delimitar donde empieza una y acaba otra. Usaremos un mapa de vegetación para delimitar las comunidades de Sierra Nevada. Asumiremos que cada polígono de dicho mapa es una comunidad ecológica. Es una asunción importante, pero es la mejor que podemos hacer con la información disponible. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2024_2025/geoinfo/vegetacion_snevada_23030.zip) puedes descargar el mapa de comunidades que usaremos en esta práctica. El enlace anterior contiene un fichero de formas (Shapefile) con la delimitación de los polígonos del mapa de vegetación a escala 1:10.000. La siguiente figura muestra la delimitación de estas comunidades en Sierra Nevada. Aunque el mapa no tiene escala, podrás reconocer el contorno del espacio protegido de Sierra Nevada. El mapa de vegetación que usamos procede de un mapa de vegetación de Andalucía generado por la REDIAM (Red de Información Ambiental de Andalucía), que es un organismo dependiente del gobierno regional y que se encarga de generar y publicar información ambiental de todo tipo.
+Este paso es el más complejo conceptualmente, ya que las comunidades no tienen un límite espacial preciso. Es decir, están conectadas entre sí y no es fácil delimitar donde empieza una y acaba otra. Usaremos un mapa de vegetación para delimitar las comunidades de Sierra Nevada. Asumiremos que cada polígono de dicho mapa es una comunidad ecológica. Es una asunción importante, pero es la mejor que podemos hacer con la información disponible. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/geoinfo/vegetacion_snevada_23030.zip) puedes descargar el mapa de comunidades que usaremos en esta práctica. El enlace anterior contiene un fichero de formas (Shapefile) con la delimitación de los polígonos del mapa de vegetación a escala 1:10.000. La siguiente figura muestra la delimitación de estas comunidades en Sierra Nevada. Aunque el mapa no tiene escala, podrás reconocer el contorno del espacio protegido de Sierra Nevada. El mapa de vegetación que usamos procede de un mapa de vegetación de Andalucía generado por la REDIAM (Red de Información Ambiental de Andalucía), que es un organismo dependiente del gobierno regional y que se encarga de generar y publicar información ambiental de todo tipo.
 
 ![comunidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2024_2025/imagenes/comunidades.png)
 
@@ -115,17 +115,20 @@ A partir de estas dos fuentes de datos obtendremos el índice de Shannon para ca
 
 ## *Tercer nivel de complejidad*: traducción del flujo de trabajo a un programa de R
 
+En los siguientes bloques se muestra paso a paso cómo generar el mapa de diversidad de Sierra Nevada. Podrás ver el código de R que se usa en cada bloque. Y aquí puedes descargar el programa de R completo.
+
+---
+
 
 
 ### Bloque 1: Preparación del entorno de trabajo en R
 
 #### Características del bloque
 + **Objetivos de aprendizaje R**
-
   + Configuración del directorio de trabajo.
-
+  
   + Instalación y carga de los paquetes necesarios.
-
+  
 + **Objetivos de aprendizaje ecológico**
 
 + **Nivel de andamiaje**
@@ -134,8 +137,6 @@ A partir de estas dos fuentes de datos obtendremos el índice de Shannon para ca
   
 
 #### Procedimiento en R
-
- 
 
 
 ```R
@@ -165,6 +166,8 @@ library(sqldf)
 
 
 
+---
+
 ### Bloque 2: Importación y transformación de datos de presencia de especies
 
 #### Características del bloque
@@ -183,16 +186,17 @@ library(sqldf)
 
 #### Procedimiento en R
 
-+ Primero usamos la función `read.csv` para cargar en R el archivo llamado `0118822-200613084148143.csv` que ya debes haber descargado en la sección anterior. Como es una función que ya hemos usado, trata de aplicarla tú en función de la experiencia previa. Para saber si el archivo `csv` tiene encabezado, cuáles son los delimitadores de campos y de decimales, solo tienes que abrirlo con un editor de texto. El objeto de R que deberá almacenar los datos de presencia se llama `presencias`. 
++ **2.1.** Primero usamos la función `read.csv` para cargar en R el archivo llamado `0118822-200613084148143.csv` que ya debes haber descargado en la sección anterior. Como es una función que ya hemos usado, trata de aplicarla tú en función de la experiencia previa. Para saber si el archivo `csv` tiene encabezado, cuáles son los delimitadores de campos y de decimales, solo tienes que abrirlo con un editor de texto. El objeto de R que deberá almacenar los datos de presencia se llama `presencias`. 
+
 <details>
-<summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo</summary>
+<summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo/a</summary>
 
 ```r
 presencias <- read.csv("0118822-200613084148143.csv", header = TRUE, sep = ",", dec = ".")
 ```
 </details>
 
-+ Para comprobar que hemos importado bien los datos, observamos la estructura y contenidos de la tabla `presencias`.
++ **2.2.** Para comprobar que hemos importado bien los datos, observamos la estructura y contenidos de la tabla `presencias`.
 
 ```R
 # ¿Cuántos registros de presencia tenemos?
@@ -209,11 +213,11 @@ head(presencias)
 
 ```
 
-+ A partir de la información anterior,
++ **2.3.** A partir de la información anterior,
   + ¿Qué columnas nos indican la especie del punto de presencia en cuestión?
   + ¿Cuáles contienen información sobre la ubicación geográfica del punto? 
 
-+ Las respuestas a las preguntas anteriores nos permiten saber cuántas especies diferentes hay en la tabla:
++ **2.4** Las respuestas a las preguntas anteriores nos permiten saber cuántas especies diferentes hay en la tabla:
 
 ```R
 # Ver las primeras 6 filas para entender la estructura
@@ -227,7 +231,7 @@ length(unique(presencias$scientificName))
 
 ```
 
-+ A continuación te propongo una actividad voluntaria que no es necesaria para el objetivo final de la práctica. La idea es que crees una gráfica de barras que muestre la información de abundancia de cada especie como lo hacen las gráficas de "rango abundancia" que vimos en teoría. Es decir, un gráfico parecido al que se muestra a continuación. Busca información en internet o pregunta a tu IA favorita. Recuerda que partes de la tabla `presencias`. Para generar la gráfica tienes que dar los siguientes pasos:
++ **2.5** A continuación te propongo una actividad voluntaria que no es necesaria para el objetivo final de la práctica. La idea es que crees una gráfica de barras que muestre la información de abundancia de cada especie como lo hacen las gráficas de "rango abundancia" que vimos en teoría. Es decir, un gráfico parecido al que se muestra a continuación. Busca información en internet o pregunta a tu IA favorita. Recuerda que partes de la tabla `presencias`. Para generar la gráfica tienes que dar los siguientes pasos:
 
   + Generar una tabla que cuente la abundancia de cada especie. Llama a esa tabla `abundancias`. Para obtenerla puedes usar una función llamada `table `que cuenta las ocurrencias de cada valor de una tabla.
   + Luego ordena esa tabla de mayor a menor. Crea una tabla llamada `abundancias_ordenadas` usando la función `sort`.
@@ -238,12 +242,12 @@ length(unique(presencias$scientificName))
 ![equitatividad](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/refs/heads/main/imagenes/equitatividad.png)
 
 <details>
-<summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo</summary>
+<summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo/a</summary>
 
 ```r
 # Generar histograma de abundancias de especies ordenadas de mayor a menor abundancia en el eje x
 
-# la función table() cuenta las ocurrencias de cada valor en un vector
+# la función table() cuenta las ocurrencias de cada valor en un tabla. Es decir, cuenta cuántos valores diferentes hay en el campo `scientificName` de `presencias
 abundancias <- table(presencias$scientificName)
 
 # ordenar las abundancias de mayor a menor usando la función sort()
@@ -262,15 +266,16 @@ barplot(abundancias_ordenadas,
 
 Una vez que obtengas el gráfico, nos preguntamos: ¿dirías que Sierra Nevada en general es muy equitativa o poco? ¿ves razonable los resultados obtenidos en la gráfica?
 
-+ Si no te has animado a generar el gráfico, sigue por aquí.
-+ La tabla que hemos importado de GBIF tiene dos campos con coordenadas. Pero R no ha reconocido este objeto como una capa georreferenciada de manera automática. Tenemos que decirle explícitamente que el objeto importado es una capa geográfica. Eso se hace aplicando la función `st_as_sf` que convierte una tabla común (data frame) en un objeto espacial de R. El código es el siguiente. En el código solo tienes que reemplazar los guiones por los nombres de los campos que muestran las coordenadas X e Y en la tabla de `presencias`. El otro argumento de la función es `crs`. Ahí ponemos el código del sistema de coordenadas en el que están los datos de `presencias`: 23030. El objeto resultante se llama `presencias_23030`tiene el mismo número de filas y columnas que `presencias`. La única diferencia es que es un objeto espacial.
++ **2.6.** Si no te has animado a generar el gráfico, sigue por aquí.
++ **2.7.** La tabla que hemos importado de GBIF tiene dos campos con coordenadas. Pero R no ha reconocido este objeto como una capa georreferenciada de manera automática. Tenemos que decirle explícitamente que el objeto importado es una capa geográfica. Eso se hace aplicando la función `st_as_sf` que convierte una tabla común (data frame) en un objeto espacial de R. El código es el siguiente. En el código solo tienes que reemplazar los guiones por los nombres de los campos que muestran las coordenadas X e Y en la tabla de `presencias`. El otro argumento de la función es `crs`. Ahí ponemos el código del sistema de coordenadas en el que están los datos de `presencias`: 23030. El objeto resultante se llama `presencias_23030` tiene el mismo número de filas y columnas que `presencias`. La única diferencia es que es un objeto espacial.
 
 ```R
 # Convertir las coordenadas UTM en un objeto espacial usando la función st_as_sf
+# En el código de abajo solo tienes que incluir los nombres de los campos de la capa "presencias" que muestran las coordenadas de cada punto en UTM
 presencia_23030 <- st_as_sf(presencias, coords = c("----", "----"),crs = 23030)
 ```
 
-+ Como tal objeto espacial, podemos representarlo gráficamente. Para dibujar un mapa sencillo que nos de una idea del aspecto de nuestros datos, podemos usar las funciones `plot` y `st_geometry`. Este último argumento indica a R que use la geometría del objeto para hacer la visualización. Tienes el código a continuación
++ **2.8.** Como tal objeto espacial, podemos representarlo gráficamente. Para dibujar un mapa sencillo que nos de una idea del aspecto de nuestros datos, podemos usar las funciones `plot` y `st_geometry`. Este último argumento indica a R que use la geometría del objeto para hacer la visualización. Tienes el código a continuación
 
 ```R
 # Hacer un mapa sencillo para ver si tiene sentido geográficamente
@@ -286,6 +291,7 @@ plot(st_geometry(presencia_23030),
 
 
 
+---
 
 
 ### Bloque 3: Importación de la capa de comunidades ecológicas.
@@ -300,19 +306,24 @@ plot(st_geometry(presencia_23030),
   + Entender la estructura de datos del mapa de vegetación.
   + Entender las asunciones que hacemos al considerar que los polígonos del mapa de vegetación son comunidades ecológicas.
 + **Nivel de andamiaje**
-  + Alto. El profesor lo hace y los estudiantes repiten después.
+  + Medio. Intentamos hacer este bloque juntos en clase. El código está presente en el guión pero oculto. Se abre solo cuando le das a una opción.
 
 #### Procedimiento en R
 
++ **3.1.** Pistas
+  + Queremos importar a R la capa llamada `vegetación_snevada_23030.shp`
+  + Para ello necesitamos usar una función del paquete `sf` que ya hemos cargado en memoria.
+  + La función que necesitamos es similar a `read_csv()` pero para capas geográficas.
+  + Puedes buscar en google o preguntar a tu IA favorita...
+<details>
+<summary>Intenta generar el código por tus medios. Si después de 5' no lo has conseguido haz click aquí</summary>
 
+```r
+comunidades<-st_read("vegetacion_snevada_23030.shp")
+```
+</details>
 
-
-
-
-
-
-
-
+---
 
 ### Bloque 4: Unión espacial y preparación de datos para el cálculo de la diversidad
 
@@ -333,6 +344,38 @@ plot(st_geometry(presencia_23030),
 
 #### Procedimiento en R
 
++ **4.1.** La unión espacial implica asignar a cada punto de la capa `presencias_23030` el código del polígono de la capa `comunidades` en el que se encuentra. Para ello usamos la función `join` que además de los atributos de las dos capas, permite borrar aquellos puntos que no caen sobre ningún polígono. Para ello usamos el argumento `left = FALSE`. 
+
+```R
+# Hacemos unión espacial. Asigna a cada punto el código de la comunidad en la que se encuentra.
+
+presencias_x_comunidades <- st_join(
+  presencias_23030,  # Puntos (presencias_23030)
+  comunidades,           # Polígonos (comunidades_23030)
+  left = FALSE           # Eliminar puntos que no caen en ningún polígono
+)
+```
+
++ **4.2.** Una vez hecha la unión, comprueba cuántas filas tiene la capa `presencias_23030` y cuántas el resultado de la unión espacial (`presencias_x_comunidades`). ¿Por que han desaparecido tantos puntos?
++ **4.3**. El siguiente paso consiste en preparar la capa de `presencias_x_comunidades` para hacer los calculos del índice de Shannon. Esto implica crear una tabla que contenga solo los datos alfanuméricos (campos con valores numéricos). Necesitamos hacer esto porque el paquete con el que haremos los cálculos (`sqldf`) no es capaz de operar con capas geográficas. Procedemos así
+
+```R
+# Convertimos el objeto espacial sf a una tabla "normal"(dataframe)
+bio <- as.data.frame(presencias_x_comunidades)
+```
+
++ **4.4.** Ahora vamos a simplificar un poco la tabla. Tenemos muchos campos y en realidad solo nos interesan dos: `OBJECTID` y `scientificName`. Para quitar el resto de campos, creamos un clon del objeto creado anteriormente (`bio`) pero que contenga solo esos campos. Para eso usamos la función `c` de R. En realidad no es una función, es una forma de seleccionar campos en una tabla. El código es así:
+
+```R
+# Quedarnos SOLO con las dos columnas que necesitamos:
+# - OBJECTID: identifica el polígono (comunidad)
+# - scientificName: identifica la especie
+bio <- bio[c('OBJECTID', 'scientificName')]
+```
+
+
+---
+
 
 ### Bloque 5: Cálculo de abundancias relativas de especies por comunidad
 
@@ -345,9 +388,128 @@ plot(st_geometry(presencia_23030),
   + Calcular la abundancia y la frecuencia relativa.
 + **Nivel de andamiaje**
 
-  + Alto. El profesor lo hace y los estudiantes repiten después.
+  + Alto. El profesor lo hace y los estudiantes repiten después. Este bloque es un poco trabalenguas. Por eso lo hacemos con un nivel de andamiaje alto. Para que a nadie se le trabe la lengua :)
 
 #### Procedimiento en R
+
++ **5.1**. Primero contaremos cuántos individuos hay de cada especie en cada comunidad. Esto se hace usando una consulta SQL (Standarized Query Leanguage). Es un lenguaje muy parecido al humano, así que te resultará fácil de entender. Este lenguaje usa las siguientes funciones:
+  + `SELECT`: Nos permite elegir las columnas que queremos en la tabla resultado. En este primer caso, necesito estas columnas:
+    + `OBJECTID`: Código de la comunidad.
+    + `scientificName`: Nombre científico de la especie contabilizada.
+    + `num_ind_sp_com`: Es un campo nuevo que creamos en la consulta. Representa el número de individuos por especie y por comunidad. Este campo ha de crearse haciendo alguna operación matemática con algún campo de la tabla. En nuestro caso, como queremos contar cuántas especies diferentes hay, usamos el argumento `count(scientificName)`.
+  + `FROM`: Nos permite indicar a qué tabla vamos a referirnos para hacer los cálculos. En nuestro caso la tabla es `bio`. 
+  + `GROUP BY`:  Esta función nos permite elegir los campos en función de los cuales se realizará la agrupación. En nuestro caso se hará a través de los campos `OBJECTID` y `scientificName` puesto que queremos agrupar por comunidad y por especie. 
+
+​	El código sería algo así:
+
+```R
+# Contar el número de individuos por especie en cada comunidad (numerador de la abundancia relativa)
+T_num_ind_sp_com <- sqldf("
+  SELECT 
+    OBJECTID,                          -- ID del polígono (comunidad)
+    scientificName,                    -- Nombre de la especie
+    count(scientificName) AS num_ind_sp_com  -- Contar individuos
+  FROM bio 
+  GROUP BY OBJECTID, scientificName    -- Agrupar por comunidad y especie
+")
+```
+
++ **5.2.** Ahora comprobamos la estructura de la tabla. Visualizamos sus 10 primeros registros con el siguiente código.
+
+```R
+# Visualizamos los 10 primeros registros de la tabla creada
+head(T_num_ind_sp_com, 10)
+```
+
++ **5.3.** El siguiente paso consiste en generar el valor del denominador que usaremos para calcular la abundancia relativa. Es decir, el número total de individuos que hay en en cada comunidad. Para ello repetimos una función `SELECT` parecida a la anterior, pero usando distintos campos y agrupando únicamente por el identificador de la comunidad `OBJECTID`. El resultado del cálculo se almacena en una tabla llamada `T_num_ind_com`. El código es el siguiente
+
+```R
+# Sumamos el número total de individuos que hay en cada comunidad (Denominador de la abundancia relativa)
+T_num_ind_com <- sqldf("
+  SELECT 
+    OBJECTID, 
+    sum(num_ind_sp_com) AS num_ind_com   -- Sumar todos los individuos
+  FROM T_num_ind_sp_com 
+  GROUP BY OBJECTID                      -- Agrupar solo por comunidad
+")
+
+```
+
++ **5.4.** Al igual que antes, visualizamos los 10 primeros registros de la tabla creada:
+
+```R
+# Visualizamos los 10 primeros registros de la tabla creada
+head(T_num_ind_com, 10)
+```
+
++ **5.5.** Ahora toca unir las dos tablas anteriores a través de un campo común: `OBJECTID`. De esta forma asignaremos a cada especie por comunidad el número de individuos totales de dicha comunidad. Para hacer esto, usamos una función de SQL llamada `LEFT JOIN`, que permite unir dos tablas que tienen un campo común. El resultado se almacena en una tabla llamada `T_num_ind_sp_com_mas_num_ind_com`: Tabla con el número de invididuos por especie y comunidad más el número de individuos por comunidad:
+
+```R
+# Unimos las tablas T_num_ind_com (denominador) y T_num_ind_sp_com (numerador)
+T_num_ind_sp_com_mas_num_ind_com <- sqldf("
+  SELECT 
+    OBJECTID, 
+    scientificName, 
+    num_ind_sp_com,           -- De la tabla T_num_ind_sp_com
+    num_ind_com               -- De la tabla T_num_ind_com
+  FROM T_num_ind_sp_com 
+  LEFT JOIN T_num_ind_com USING(OBJECTID)  -- Unir por OBJECTID
+")
+```
+
++ **5.6** Ahora verificamos el resultado. Ya debemos saber qué función utilizar. Así, que, adelante ;)
+
+<details>
+<summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo/a</summary>
+
+```r
+head(T_num_ind_sp_com_mas_num_ind_com, 10)
+```
+</details>
+
++ **5.7** Los siguientes puntos consisten en calcular la abundancia relativa y el logaritmo en base dos de la misma. En esta ocasión usaremos una aproximación distinta en R. No usaremos instrucciones SQL, sino sintaxis propia del núcleo de R. Con el símbolo `$` creamos un campo nuevo dentro de la tabla `T_num_ind_sp_com_mas_num_ind_com` . Ese campo se llamará `pi`. Resulta de dividir el numerador entre el denominador calculados anteriormente. Así:
+
+```R
+# Calculamos la abundancia relativa de cada especie sin usar el paquete sqldf
+T_num_ind_sp_com_mas_num_ind_com$pi <- 
+  T_num_ind_sp_com_mas_num_ind_com$num_ind_sp_com / 
+  T_num_ind_sp_com_mas_num_ind_com$num_ind_com
+
+# Comprobamos que el resultado tiene sentido
+head(T_num_ind_sp_com_mas_num_ind_com, 10)
+```
+
++ **5.8.** Ahora calculamos el logaritmo en base 2 de la abundancia relativa. La función de R que hace esto se llama `log2`. Trata de crear tú el código usando la misma sintáxis de antes. El nuevo campo a crear en la tabla `T_num_ind_sp_com_mas_num_ind_com` se llamará `log2pi`. 
+
+<details>
+<summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo/a</summary>
+
+
+```r
+# Calculamos el logaritmo en base 2 de la abundancia relativa
+T_num_ind_sp_com_mas_num_ind_com$log2pi <- 
+  log2(T_num_ind_sp_com_mas_num_ind_com$pi)
+```
+
+</details>
+
++ **5.9**. Por último en este bloque, obtenemos un campo nuevo llamado `pi_log2pi` que resulta de multiplicar los campos `pi` y `log2pi`.
+
+<details>
+<summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo/a</summary>
+
+
+```r
+# Calculamos el término Pi * log2(Pi)
+T_num_ind_sp_com_mas_num_ind_com$pi_log2pi <- 
+  T_num_ind_sp_com_mas_num_ind_com$pi * 
+  T_num_ind_sp_com_mas_num_ind_com$log2pi
+```
+
+</details>
+
+---
+
 
 
 ### Bloque 6: Cálculo del índice de Shannon por comunidad
@@ -361,17 +523,44 @@ plot(st_geometry(presencia_23030),
 + **Objetivos de aprendizaje ecológico**
   + Aplicar el índice de Shannon para cada polígono (=comunidad)
 + **Nivel de andamiaje**
+  + Bajo. Los estudiantes ponen en práctica lo aprendido y realizan el proceso por sí mismos.
 
-  + Alto. El profesor lo hace y los estudiantes repiten después.
+
 
 #### Procedimiento en R
 
++ **6.1** Este bloque tiene un único paso que consiste hacer el sumatorio de la expresión del índice de Shannon. Tenemos que sumar los valores del campo `pi_log2pi` de la tabla `T_num_ind_sp_com_mas_num_ind_com` agrupando por comunidad (campo `OBJECTID`). El resultado se almacena en un campo nuevo llamado `H` que está también en una tabla nueva llamada `T_Shannon`. ¿Te animas a intentarlo tú solo/a?. El punto **5.3** del bloque anterior te da muchas pistas sobre cómo proceder.
+<details>
+<summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo/a</summary>
 
-### Bloque 7: Integración de resultados y exportación a formato SIG (vectorial y raster)
+```r
+# Calculamos el índice de Shannon H por comunidad sumando los términos Pi * log2(Pi) y multiplicando por -1
+T_Shannon <- sqldf("
+  SELECT 
+    OBJECTID, 
+    sum(pi_log2pi) * -1 AS H   -- Índice de Shannon
+  FROM T_num_ind_sp_com_mas_num_ind_com
+  GROUP BY OBJECTID              -- Agrupar por comunidad
+")
+
+```
+</details>
+
++ **6.2.** Verificamos que la tabla creada existe y tiene sentido.
+
+```R
+#Verificamos la existencia y contenido de la tabla creada
+head(T_Shannon)
+```
+
+
+
+---
+
+### Bloque 7: Integración de resultados numéricos con el mapa de comunidades y exportación a formato SIG (vectorial y raster)
 
 #### Características del bloque
 + **Objetivos de aprendizaje R**
-
   + Fusionar resultados tabulares (tabla con valores de H para cada comunidad) con datos espaciales (distribución de comunidades) para obtener el mapa final.
   + Convertir entre formatos vectorial y raster.
   + Exportar para visualizar fácilmente en SIG
@@ -383,14 +572,92 @@ plot(st_geometry(presencia_23030),
 
 #### Procedimiento en R
 
-## Resultados esperables
-El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de una representacióin del fichero vectorial obtenido. En esta representación se ha asignado el valor del índice Shannon a cada polígono del mapa de vegetación inicial. El mapa se ha obtenido de la siguiente forma:
++ **7.1** Ya tenemos una tabla con el índice de Shannon para cada comunidad. Ahora, como queremos obtener un mapa, debemos unir dicha tabla a la capa vectorial que muestra la distribución de las comunidades. Para ello usamos la función `merge` de R. Dicha función requiere que indiquemos:
 
-+ Cargamos en QGIS la capa raster obtenida al final del flujo de trabajo anterior.
-+ Clasificamos en función de los valores numéricos de cada píxel de la siguiente manera:
-  + Método de clasificación: Banda sencilla pseudocolor.
-  + Rampa de colores: Spectral
-  + Modo de clasificación: quantiles
+  + `x`: Capa espacial. En nuestro caso es `comunidades`.
+  + `y`: Tabla los valores que se unirán a la espacial. En nuestro caso es `T_Shannon`.
+  + `by.x`: Indica el campo de unión en la tabla de `comunidades`. Es el campo ` OBJECTID`
+  + `by.y`: Indica el campo de unión en la tabla `T_Shannon`. El campo es, también, ` OBJECTID`.
+
+  La sintaxis es así:
+
+  ```R
+  # Unimos la tabla T_Shannon con la capa vectorial de comunidades
+  comunidades <- merge(
+    x = comunidades,           # Capa espacial (polígonos)
+    y = T_Shannon,             # Tabla con índice H
+    by.x = "OBJECTID",         # Campo de unión en comunidades
+    by.y = "OBJECTID"          # Campo de unión en T_Shannon
+  )
+  ```
+
++ **7.2.** Para comprobar que todo ha ido bien, podemos pedirle a R que nos muestre el contenido de la tabla. O al menos sus 10 primeros registros. ¿Recuerdas cómo se hace?
+
+<details>
+<summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo/a</summary>
+
+```r
+# Mostramos los 10 primeros registros de la tabla de atributos de comunidades para verificar que el índice H se ha añadido correctamente
+head(comunidades, 10)
+```
+</details>
+
+
++ **7.3** El penúltimo paso del bloque y de la práctica consiste en generar un fichero de formas (shapefile) llamado `Shannon_sierra_nevada` a partir de la capa `comunidades`que tenemos en R. Ya tienes manejo suficiente como para hacerlo por ti mismo/a. 
+
+<details>
+<summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo/a</summary>
+
+```r
+# Exportamos la capa de comunidades con el índice de Shannon a un archivo shapefile para visualizar en QGIS
+st_write(comunidades, "Shannon_sierra_nevada.shp", append=FALSE)
+```
+</details>
+
++ **7.4** También podemos exportar la capa a formato Raster. Esto nos resultará útil cuando queramos conocer el valor promedio de diversidad de cada tipo de ecosistema. Podríamos hacer este paso en QGIS, pero ya que somos unos expertos en R, vamos a intentarlo. Os doy alguna pista:
+
+  + Para rasterizar una capa en R primero hay que crear un raster vacío que llamaremos `plantilla_raster`. Para eso usamos la función `rast`. Diremos que dicha plantilla tiene 100 m de resolución y el mismo sistema de coordenadas que `comunidades`.
+  + Luego, usaremos la función `rasterize` para convertir la capa vectorial `comunidades` en un raster en formato R. Llamaremos `Shannon_raster` a esta capa.
+  + El último paso consiste en exportar ese objeto a un archivo con extensión `tif`. Eso lo haremos con la función `writeRaster`. 
+
+  ¿Te animas a intentarlo tú?
+
+<details>
+<summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo/a</summary>
+
+```r
+# Exportamos a formato raster con resolución de 100 metros
+# Primero, creamos una plantilla raster con la extensión y resolución deseada
+plantilla_raster <- rast(comunidades, 
+  resolution = 100, 
+  crs = st_crs(comunidades)$proj4string) 
+
+# Creamos un archivo Tiff para el índice de Shannon
+shannon_raster <- rasterize(
+  comunidades,               # Capa vectorial con el índice H
+  plantilla_raster,         # Plantilla raster
+  field = "H"               # Campo que contiene el índice de Shannon
+)
+# Guardamos el raster en un archivo GeoTIFF
+writeRaster(shannon_raster, "Shannon_sierra_nevada.tif", overwrite=TRUE)
+```
+</details>
+
+
++ **7.5** Ya solo queda abrir el shapefile creado con QGIS, dale colores en virtud del campo `H` y observar los patrones espaciales existentes: 
+  + Cargamos en QGIS la capa raster obtenida al final del flujo de trabajo anterior.
+  + Clasificamos en función de los valores numéricos de cada píxel de la siguiente manera:
+    + Método de clasificación: Banda sencilla pseudocolor.
+    + Rampa de colores: Spectral
+    + Modo de clasificación: quantiles
+
+
+
+## Resultados esperables
+
+El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de una representación del fichero vectorial obtenido. En esta representación se ha asignado el valor del índice Shannon a cada polígono del mapa de vegetación inicial. El mapa se ha obtenido de la siguiente forma:
+
+
 
 
 ![shannon](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/shannon_snev.png)
@@ -418,7 +685,11 @@ En el mapa resultante se pueden identificar varios patrones de distribución esp
 
 ## Conexión de la práctica con el trabajo sobre tipos de ecosistemas
 
-El flujo de trabajo descrito arriba permite obtener un mapa de diversidad de Sierra Nevada asumiendo que cada polígono del mapa de vegetación es una comunidad. Esto nos permitirá estudiar patrones espaciales de cambio de la diversidad a escala de todo el territorio. Pero nuestro objetivo en el contexto del trabajo de prácticas que tenemos que hacer es generar un valor numérico que muestre la diversidad promedio de cada uno de los ecosistemas con los que estamos trabajando. Para eso tendremos que añadir al flujo de trabajo que se describe a continuación los pasos necesarios para hacer lo siguiente:
+El flujo de trabajo descrito arriba permite obtener un mapa de diversidad de Sierra Nevada asumiendo que cada polígono del mapa de vegetación es una comunidad. Esto nos permitirá estudiar patrones espaciales de cambio de la diversidad a escala de todo el territorio. Pero para nuestro trabajo tenemos dos objetivos:
+
+### Creación de una tabla con los valores promedio de H en cada tipo de ecosistema
+
+Para hacer esto tendremos que añadir al flujo de trabajo los siguientes pasos:
 
 + Combinar de alguna manera (con R o con QGIS) el mapa de diversidad obtenido (en formato raster) con el mapa de distribución de los ecosistemas de Sierra Nevada.
 + Calcular el valor promedio de todos los píxeles del mapa de diversidad en cada uno de los ecosistemas de Sierra Nevada. 
@@ -432,9 +703,6 @@ Y para terminar, una pista muy buena: habéis hecho ya algo parecido con Jorge e
 
 
 ![zonal](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2024_2025/imagenes/zonal_statistics.png)
-
-
-
 
 
 
@@ -467,7 +735,17 @@ En los campos *_mean* y *_stdev* se almacenarán respectivamente los valores pro
 + ¿En qué categoría podríamos poner los bosques de ribera? ¿por qué no aparecen en la lista?
 + También tenéis que pensar una forma de representar la diversidad de vuestro ecosistema en el trabajo de manera que se pueda comparar fácilmente con los demás ecosistemas.
 
-Además de este resultado numérico para cada ecosistema, también será interesante que creéis un mapa de diversidad de todas las comunidades ocupadas por vuestro ecosistema. Esto os permitirá saber si, por ejemplo, los encinares del sur son más o menos diversos que los del norte. Para hacer esto bastará con que recortéis en Qgis la capa que hemos obtenido en esta práctica en formato vectorial usando como molde la delimitación de vuestro ecosistema que está contenido en la capa de ecosistemas. Es decir, tendréis que hacer una operación `clip` en la que la capa destino es la que contiene la información del índice de Shannon y la que hace de "molde" es el mapa de ecosistemas. 
+
+
+### Mapa de diversidad de tu ecosistema
+
+Además de este resultado numérico para cada ecosistema, también será interesante que creéis un mapa de diversidad de todas las comunidades ocupadas por vuestro ecosistema. Esto os permitirá saber si, por ejemplo, los encinares del sur son más o menos diversos que los del norte. Para hacer esto bastará con que recortéis en Qgis la capa que hemos obtenido en esta práctica en formato vectorial usando como molde la delimitación de vuestro ecosistema que está contenido en la capa de ecosistemas descargada anteriormente. Es decir, tendréis que hacer una operación `clip` en la que la capa destino es la que contiene la información del índice de Shannon y la que hace de "molde" es el mapa de ecosistemas. Puedes hacer esto en QGIS con la función de recortar un raster con un fichero vectorial. 
+
+El siguiente mapa muestra algo con el aspecto de lo que deberías obtener.
+
+
+
+
 
 
 
