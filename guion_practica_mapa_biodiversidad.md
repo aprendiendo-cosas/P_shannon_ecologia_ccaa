@@ -745,7 +745,7 @@ El siguiente mapa muestra algo con el aspecto de lo que deberías obtener.
 
 
 
-
+![diversidad_encinar](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/diversidad_encinares.png)
 
 
 
