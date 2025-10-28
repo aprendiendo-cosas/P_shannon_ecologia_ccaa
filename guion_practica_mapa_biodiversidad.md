@@ -6,7 +6,7 @@
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
 > + **_Duración_**: 2 sesiones de 2 horas y otras 2 horas en casa.
 
-
+![portada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/portada.png)
 
 ## Objetivos
 
