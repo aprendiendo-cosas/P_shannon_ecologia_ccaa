@@ -115,9 +115,7 @@ A partir de estas dos fuentes de datos obtendremos el índice de Shannon para ca
 
 ## *Tercer nivel de complejidad*: traducción del flujo de trabajo a un programa de R
 
-En los siguientes bloques se muestra paso a paso cómo generar el mapa de diversidad de Sierra Nevada. Podrás ver el código de R que se usa en cada bloque. Y aquí puedes descargar el programa de R completo.
-
----
+En los siguientes bloques se muestra paso a paso cómo generar el mapa de diversidad de Sierra Nevada. Podrás ver el código de R que se usa en cada bloque. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/geoinfo/shannon_sierra_nevada.R.zip) puedes descargar el programa de R completo.
 
 
 
