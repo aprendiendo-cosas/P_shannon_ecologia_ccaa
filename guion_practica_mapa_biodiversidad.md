@@ -4,7 +4,7 @@
 > + **_Versión_**: 2025-2026
 > + **_Asignatura (grado)_**: Ecología (Ciencias ambientales). 
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
-> + **_Duración_**: 2 sesiones de 2 horas y otras 2 horas en casa.
+> + **_Duración_**: 3 sesiones de 2 horas y otras 2 horas en casa.
 
 ![portada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/portada.png)
 
@@ -726,12 +726,13 @@ El resultado a obtener en la parte de asignar valores promedios de diversidad a 
 
 
 
-En los campos *_mean* y *_stdev* se almacenarán respectivamente los valores promedio y la desviación estándard de la diversidad para cada tipo de ecosistema. Ahora toca reflexionar sobre los resultados obtenidos:
+En los campos *_mean* y *_stdev* se almacenarán respectivamente los valores promedio y la desviación estándard de la diversidad para cada tipo de ecosistema. La tabla anterior no contiene los ecosistemas de ribera. Repite la operación que te ha permitido obtener la tabla anterior pero en esta ocasión con la capa de bosques de ribera. Te saldrá una tabla con una sola fila. Copia esa fila al archivo de excel donde tienes la tabla anterior y ya podrás comparar todos los ecosistemas. 
+
+Ahora toca reflexionar sobre los resultados obtenidos:
 
 + ¿Qué ecositema tiene menos diversidad?, ¿por qué?
 + ¿Cuál es más diverso?, ¿por qué?
 + ¿En qué categoría podríamos poner los bosques de ribera? ¿por qué no aparecen en la lista?
-+ También tenéis que pensar una forma de representar la diversidad de vuestro ecosistema en el trabajo de manera que se pueda comparar fácilmente con los demás ecosistemas.
 
 
 
