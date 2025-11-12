@@ -6,7 +6,7 @@
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
 > + **_Duración_**: 3 sesiones de 2 horas y otras 2 horas en casa.
 
-![portada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/portada.png)
+![portada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/portada.png)
 
 ## Objetivos
 
@@ -28,7 +28,7 @@ Esta práctica tiene los siguientes objetivos:
 
 ## Contextualización ecológica
 
-Esta sesión práctica está muy relacionada con el tema en el que hablamos de la diversidad de las [comunidades ecológicas](https://rawcdn.githack.com/aprendiendo-cosas/Te_comunidades_diversidad_ecologia_ccaa/main/guion_comunidades_diversidad.html). En concreto, usaremos los conocimientos adquiridos en esa sesión para construir un mapa de biodiversidad de Sierra Nevada. Esto quiere decir, que debes de repasar dichos conceptos con objeto de que el aprendizaje de esta práctica sea realmente efectivo.
+Esta sesión práctica está muy relacionada con el tema en el que hablamos de la diversidad de las [comunidades ecológicas](https://rawcdn.githack.com/aprendiendo-cosas/Te_comunidades_diversidad_ecologia_ccaa/2025_2026/guion_comunidades_diversidad.html). En concreto, usaremos los conocimientos adquiridos en esa sesión para construir un mapa de biodiversidad de Sierra Nevada. Esto quiere decir, que debes de repasar dichos conceptos con objeto de que el aprendizaje de esta práctica sea realmente efectivo.
 
 Disponer de un mapa que muestre cómo se distribuye la diversidad en el territorio es muy útil por muchas razones. En primer lugar, nos ayuda a leer el paisaje con la mirada de la ecología. Como sabemos que la diversidad está relacionada con elementos clave como la resistencia y la resiliencia, sabiendo cómo se distribuye la diversidad estamos también adquiriendo información sobre cómo se distribuyen las propiedades anteriores en el territorio. Esta información es también muy valiosa para gestionar el territorio. Por ejemplo, los lugares en los que hay baja diversidad, pero tienen las condiciones ambientales adecuadas para que sea alta, requerirán actuaciones de restauración por nuestra parte.
 
@@ -56,7 +56,7 @@ Vamos a ello:
 
 ## *Primer nivel de complejidad*: ideas generales del flujo de trabajo a seguir y conexión con la teoría.
 
-La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/view/cUj8WyKbNsFotcpylja0/) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_ecologia_ccaa.exe) para Windows y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_ecologia_ccaa.zip) para Mac. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/1_mapa_biodiv_ecologia_ccaa.pdf) la tienes en formato pdf. En esta presentación se describe de manera muy general cómo se realizará el mapa de biodiversidad. Se trata de la primera explicación de este tipo que realizamos durante la clase. 
+La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/view/cUj8WyKbNsFotcpylja0/) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2025_2026/presentacion/1_mapa_biodiv_ecologia_ccaa.exe) para Windows y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2025_2026/presentacion/1_mapa_biodiv_ecologia_ccaa.zip) para Mac. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2025_2026/presentacion/1_mapa_biodiv_ecologia_ccaa.pdf) la tienes en formato pdf. En esta presentación se describe de manera muy general cómo se realizará el mapa de biodiversidad. Se trata de la primera explicación de este tipo que realizamos durante la clase. 
 
 <iframe src="https://prezi.com/p/embed/cUj8WyKbNsFotcpylja0/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="515" width="560"></iframe>
 
@@ -80,42 +80,42 @@ A continuación se muestra lo que se dibujó en la pizarra. Hay varias versiones
 
 *Versión más pausada hecha el día de antes de la práctica en la pizarra de mi despacho...*
 
-![pizarra](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/esquemas_pizarra/pizarra_despacho.jpg)
+![pizarra](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/esquemas_pizarra/pizarra_despacho.jpg)
 
 *Versión algo más cutre hecha en la pizarra digital de la clase en la sesión del GM-2*
 
-![Diapo1](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/esquemas_pizarra/Diapositiva1.jpeg)
+![Diapo1](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/esquemas_pizarra/Diapositiva1.jpeg)
 
-![Diapo2](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/esquemas_pizarra/Diapositiva2.jpeg)
+![Diapo2](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/esquemas_pizarra/Diapositiva2.jpeg)
 
-![Diapo3](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/esquemas_pizarra/Diapositiva3.jpeg)
+![Diapo3](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/esquemas_pizarra/Diapositiva3.jpeg)
 
-![Diapo4](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/esquemas_pizarra/Diapositiva4.jpeg)
+![Diapo4](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/esquemas_pizarra/Diapositiva4.jpeg)
 
 A continuación se describen con más detalle las fuentes de datos que utilizaremos en esta práctica. También se ofrecen los enlaces para descargar los datos.
 
 ### Información de distribución de especies en Sierra Nevada a partir de GBIF
-Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada [GBIF](https://www.gbif.org/) (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/geoinfo/csv_gbif_sierra_nevada.zip) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada en el mismo formato en el que se obtienen de GBIF. Usaremos este archivo para generar el mapa de biodiversidad de Sierra Nevada.
+Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada [GBIF](https://www.gbif.org/) (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2025_2026/geoinfo/csv_gbif_sierra_nevada.zip) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada en el mismo formato en el que se obtienen de GBIF. Usaremos este archivo para generar el mapa de biodiversidad de Sierra Nevada.
 
-![puntos](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2024_2025/imagenes/puntos.png)
+![puntos](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/puntos.png)
 
 
 ### Distribución de las comunidades ecológicas que conforman Sierra Nevada.
-Este paso es el más complejo conceptualmente, ya que las comunidades no tienen un límite espacial preciso. Es decir, están conectadas entre sí y no es fácil delimitar donde empieza una y acaba otra. Usaremos un mapa de vegetación para delimitar las comunidades de Sierra Nevada. Asumiremos que cada polígono de dicho mapa es una comunidad ecológica. Es una asunción importante, pero es la mejor que podemos hacer con la información disponible. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/geoinfo/vegetacion_snevada_23030.zip) puedes descargar el mapa de comunidades que usaremos en esta práctica. El enlace anterior contiene un fichero de formas (Shapefile) con la delimitación de los polígonos del mapa de vegetación a escala 1:10.000. La siguiente figura muestra la delimitación de estas comunidades en Sierra Nevada. Aunque el mapa no tiene escala, podrás reconocer el contorno del espacio protegido de Sierra Nevada. El mapa de vegetación que usamos procede de un mapa de vegetación de Andalucía generado por la REDIAM (Red de Información Ambiental de Andalucía), que es un organismo dependiente del gobierno regional y que se encarga de generar y publicar información ambiental de todo tipo.
+Este paso es el más complejo conceptualmente, ya que las comunidades no tienen un límite espacial preciso. Es decir, están conectadas entre sí y no es fácil delimitar donde empieza una y acaba otra. Usaremos un mapa de vegetación para delimitar las comunidades de Sierra Nevada. Asumiremos que cada polígono de dicho mapa es una comunidad ecológica. Es una asunción importante, pero es la mejor que podemos hacer con la información disponible. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2025_2026/geoinfo/vegetacion_snevada_23030.zip) puedes descargar el mapa de comunidades que usaremos en esta práctica. El enlace anterior contiene un fichero de formas (Shapefile) con la delimitación de los polígonos del mapa de vegetación a escala 1:10.000. La siguiente figura muestra la delimitación de estas comunidades en Sierra Nevada. Aunque el mapa no tiene escala, podrás reconocer el contorno del espacio protegido de Sierra Nevada. El mapa de vegetación que usamos procede de un mapa de vegetación de Andalucía generado por la REDIAM (Red de Información Ambiental de Andalucía), que es un organismo dependiente del gobierno regional y que se encarga de generar y publicar información ambiental de todo tipo.
 
-![comunidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2024_2025/imagenes/comunidades.png)
+![comunidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/comunidades.png)
 
 
 
 A partir de estas dos fuentes de datos obtendremos el índice de Shannon para cada una de las comunidades de Sierra Nevada. Es decir, usaremos los datos de presencia de cada especie que hay en cada una de las comunidades para calcular su índice de Shannon. En la siguiente figura puedes ver la distribución de ocurrencias de especies en unas cuantas comunidades.
 
-![puntos_comunidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2024_2025/imagenes/puntos_sobre_comunidades.png)
+![puntos_comunidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/puntos_sobre_comunidades.png)
 
 
 
 ## *Tercer nivel de complejidad*: traducción del flujo de trabajo a un programa de R
 
-En los siguientes bloques se muestra paso a paso cómo generar el mapa de diversidad de Sierra Nevada. Podrás ver el código de R que se usa en cada bloque. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/geoinfo/shannon_sierra_nevada.R.zip) puedes descargar el programa de R completo.
+En los siguientes bloques se muestra paso a paso cómo generar el mapa de diversidad de Sierra Nevada. Podrás ver el código de R que se usa en cada bloque. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2025_2026/geoinfo/shannon_sierra_nevada.R.zip) puedes descargar el programa de R completo.
 
 
 
@@ -237,7 +237,7 @@ length(unique(presencias$scientificName))
 
   Podrás ver el código más abajo. No lo uses directamente hasta que hayas pasado al menos 5' intentándolo tú misma/o. Este paso no es necesario para generar el mapa de diversidad, pero haciéndolo mejoramos nuestro conocimiento de R.
 
-![equitatividad](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/refs/heads/main/imagenes/equitatividad.png)
+![equitatividad](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/refs/tags/2025_2026/imagenes/equitatividad.png)
 
 <details>
 <summary>Haz click aquí para mostrar el código a continuación. Usa esta opción si no lo consigues por ti mismo/a</summary>
@@ -658,7 +658,7 @@ El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de u
 
 
 
-![shannon](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/shannon_snev.png)
+![shannon](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/shannon_snev.png)
 
 
 
@@ -692,7 +692,7 @@ Para hacer esto tendremos que añadir al flujo de trabajo los siguientes pasos:
 + Combinar de alguna manera (con R o con QGIS) el mapa de diversidad obtenido (en formato raster) con el mapa de distribución de los ecosistemas de Sierra Nevada.
 + Calcular el valor promedio de todos los píxeles del mapa de diversidad en cada uno de los ecosistemas de Sierra Nevada. 
 
-Esta es la parte que tendréis que hacer vosotros individualmente. Para ello necesitáis usar [esta](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/refs/tags/2024_2025/geoinfo/ecosistemas_snev_dissolve.zip) capa (*ecosistemas_snev_dissolve.shp*) que muestra la distribución de los ecosistemas de Sierra Nevada. Al mostrarla en QGIS veréis que es una capa vectorial con polígonos. Pero tiene una particularidad. Es una capa en la que todos los polígonos que tienen el mismo tipo de ecosistema se han fusionado en uno solo. Aunque visualmente aparezcan como muchos polígonos, en realidad para el SIG y para la tabla de atributos de la capa, computa como un único polígono. Por eso, cuando abráis la tabla de atributos, veréis solo 12 filas que corresponden con los 12 tipos de ecosistemas que hay en Sierra Nevada según esta capa. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/refs/heads/main/geoinfo/bosque_ribera_dissolve.zip) tienes el mapa de distribución de los bosques de ribera, que no aparecen en el mapa anterior. 
+Esta es la parte que tendréis que hacer vosotros individualmente. Para ello necesitáis usar [esta](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/refs/tags/2025_2026/geoinfo/ecosistemas_snev_dissolve.zip) capa (*ecosistemas_snev_dissolve.shp*) que muestra la distribución de los ecosistemas de Sierra Nevada. Al mostrarla en QGIS veréis que es una capa vectorial con polígonos. Pero tiene una particularidad. Es una capa en la que todos los polígonos que tienen el mismo tipo de ecosistema se han fusionado en uno solo. Aunque visualmente aparezcan como muchos polígonos, en realidad para el SIG y para la tabla de atributos de la capa, computa como un único polígono. Por eso, cuando abráis la tabla de atributos, veréis solo 12 filas que corresponden con los 12 tipos de ecosistemas que hay en Sierra Nevada según esta capa. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/refs/tags/2025_2026/geoinfo/bosque_ribera_dissolve.zip) tienes el mapa de distribución de los bosques de ribera, que no aparecen en el mapa anterior. 
 
 Tendréis que buscar un método para asignar acada polígono de esta capa el valor promedio de índice de Shannon de todos los píxeles que contiene cada tipo de ecosistema. Por ejemplo, para el polígono marcado en rojo de la imagen inferior, se calculará el valor promedio del índice de Shannon de todos los píxeles que tiene dentro (mostrados en una gama de colores del rojo al verde). Podéis hacer esto en QGIS o en R. Es importante que preguntéis a ChatGPT o a cualquier IA para dar con el método adecuado. Las palabras claves podrían ser: extraer información de un raster a una capa poligonal, asignar estadísticas de un raster a una capa de polígonos, etc.
 
@@ -700,7 +700,7 @@ Y para terminar, una pista muy buena: habéis hecho ya algo parecido con Jorge e
 
 
 
-![zonal](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2024_2025/imagenes/zonal_statistics.png)
+![zonal](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/zonal_statistics.png)
 
 
 
@@ -744,7 +744,7 @@ El siguiente mapa muestra algo con el aspecto de lo que deberías obtener.
 
 
 
-![diversidad_encinar](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/diversidad_encinares.png)
+![diversidad_encinar](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/diversidad_encinares.png)
 
 
 
@@ -752,7 +752,7 @@ El siguiente mapa muestra algo con el aspecto de lo que deberías obtener.
 
 ****
 
-[Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/archive/refs/tags/2024_2025.zip) puedes descargar un archivo .zip que contiene este guión en formato html y todo el material que incluye.
+[Aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/archive/refs/tags/2025_2026.zip) puedes descargar un archivo .zip que contiene este guión en formato html y todo el material que incluye.
 
 ****
 Haz click [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/releases) para ver cómo ha cambiado este guión en los distintos cursos académicos.
