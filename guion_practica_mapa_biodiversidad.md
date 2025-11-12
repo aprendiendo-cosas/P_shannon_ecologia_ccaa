@@ -270,7 +270,7 @@ Una vez que obtengas el gráfico, nos preguntamos: ¿dirías que Sierra Nevada e
 ```R
 # Convertir las coordenadas UTM en un objeto espacial usando la función st_as_sf
 # En el código de abajo solo tienes que incluir los nombres de los campos de la capa "presencias" que muestran las coordenadas de cada punto en UTM
-presencia_23030 <- st_as_sf(presencias, coords = c("----", "----"),crs = 23030)
+presencias_23030 <- st_as_sf(presencias, coords = c("----", "----"),crs = 23030)
 ```
 
 + **2.8.** Como tal objeto espacial, podemos representarlo gráficamente. Para dibujar un mapa sencillo que nos de una idea del aspecto de nuestros datos, podemos usar las funciones `plot` y `st_geometry`. Este último argumento indica a R que use la geometría del objeto para hacer la visualización. Tienes el código a continuación
