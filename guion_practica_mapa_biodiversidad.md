@@ -743,7 +743,7 @@ Ahora toca reflexionar sobre los resultados obtenidos:
 
 
 
-### 8.2 Mapa de diversidad de tu ecosistema
+###### 8.2 Mapa de diversidad de tu ecosistema
 
 Además de este resultado numérico para cada ecosistema, también será interesante que creéis un mapa de diversidad de todas las comunidades ocupadas por vuestro ecosistema. Esto os permitirá saber si, por ejemplo, los encinares del sur son más o menos diversos que los del norte. Para hacer esto bastará con que recortéis en Qgis la capa que hemos obtenido en esta práctica en formato vectorial usando como molde la delimitación de vuestro ecosistema que está contenido en la capa de ecosistemas descargada anteriormente. Es decir, tendréis que hacer una operación `clip` en la que la capa destino es la que contiene la información del índice de Shannon y la que hace de "molde" es el mapa de ecosistemas. Puedes hacer esto en QGIS con la función de recortar un raster con un fichero vectorial. 
 
