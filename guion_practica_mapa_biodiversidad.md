@@ -88,15 +88,11 @@ A continuación se muestra lo que se dibujó en la pizarra. Hay varias versiones
 
 ![pizarra](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/esquemas_pizarra/pizarra_despacho.jpg)
 
-*Versión algo más cutre hecha en la pizarra digital de la clase en la sesión del GM-2*
 
-![Diapo1](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/esquemas_pizarra/Diapositiva1.jpeg)
 
-![Diapo2](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/esquemas_pizarra/Diapositiva2.jpeg)
 
-![Diapo3](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/esquemas_pizarra/Diapositiva3.jpeg)
 
-![Diapo4](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/esquemas_pizarra/Diapositiva4.jpeg)
+
 
 A continuación se describen con más detalle las fuentes de datos que utilizaremos en esta práctica. También se ofrecen los enlaces para descargar los datos.
 
@@ -236,7 +232,7 @@ length(unique(presencias$scientificName))
 
 ```
 
-+ **6.2.2.5** A continuación te propongo una actividad voluntaria que no es necesaria para el objetivo final de la práctica. La idea es que crees una gráfica de barras que muestre la información de abundancia de cada especie como lo hacen las gráficas de "rango abundancia" que vimos en teoría. Es decir, un gráfico parecido al que se muestra a continuación. Busca información en internet o pregunta a tu IA favorita. Recuerda que partes de la tabla `presencias`. Para generar la gráfica tienes que dar los siguientes pasos:
++ **6.2.2.5** A continuación te propongo una actividad voluntaria que no es necesaria para el objetivo final de la práctica. La idea es que crees un histograma que muestre la información de abundancia de cada especie como lo hacen las gráficas de "rango abundancia" que vimos en teoría. Es decir, un gráfico parecido al que se muestra a continuación. Busca información en internet o pregunta a tu IA favorita. Recuerda que partes de la tabla `presencias`. Para generar la gráfica tienes que dar los siguientes pasos:
 
   + Generar una tabla que cuente la abundancia de cada especie. Llama a esa tabla `abundancias`. Para obtenerla puedes usar una función llamada `table `que cuenta las ocurrencias de cada valor de una tabla.
   + Luego ordena esa tabla de mayor a menor. Crea una tabla llamada `abundancias_ordenadas` usando la función `sort`.
@@ -294,11 +290,6 @@ plot(st_geometry(presencia_23030),
 
 
 
-
-
----
-
-
 ### 6.3 Bloque 3: Importación de la capa de comunidades ecológicas.
 
 #### 6.3.1 Características del bloque
@@ -328,7 +319,7 @@ comunidades<-st_read("vegetacion_snevada_23030.shp")
 ```
 </details>
 
----
+
 
 ### 6.4 Bloque 4: Unión espacial y preparación de datos para el cálculo de la diversidad
 
@@ -344,7 +335,6 @@ comunidades<-st_read("vegetacion_snevada_23030.shp")
   + Comprender las implicaciones que tiene la unión espacial que vamos a hacer.
 
 + **Nivel de andamiaje**
-
   + Alto. El profesor lo hace y los estudiantes repiten después.
 
 #### 6.4.2 Procedimiento en R
@@ -379,20 +369,19 @@ bio <- bio[c('OBJECTID', 'scientificName')]
 ```
 
 
----
+
+
 
 
 ### 6.5 Bloque 5: Cálculo de abundancias relativas de especies por comunidad
 
 #### 6.5.1 Características del bloque
 + **Objetivos de aprendizaje R**
-
   + Entender algunas operaciones básicas de SQL con bases de datos (agrupar por campos, relación entre tablas)
 + **Objetivos de aprendizaje ecológico**
   + Comprender bien qué la diversidad depende del número de especies y de la abundancia relativa de cada especie.
   + Calcular la abundancia y la frecuencia relativa.
 + **Nivel de andamiaje**
-
   + Alto. El profesor lo hace y los estudiantes repiten después. Este bloque es un poco trabalenguas. Por eso lo hacemos con un nivel de andamiaje alto. Para que a nadie se le trabe la lengua :)
 
 #### 6.5.2 Procedimiento en R
@@ -513,8 +502,6 @@ T_num_ind_sp_com_mas_num_ind_com$pi_log2pi <-
 
 </details>
 
----
-
 
 
 ### 6.6 Bloque 6: Cálculo del índice de Shannon por comunidad
@@ -560,7 +547,7 @@ head(T_Shannon)
 
 
 
----
+
 
 ### 6.7 Bloque 7: Integración de resultados numéricos con el mapa de comunidades y exportación a formato SIG (vectorial y raster)
 
@@ -743,7 +730,7 @@ Ahora toca reflexionar sobre los resultados obtenidos:
 
 
 
-###### 8.2 Mapa de diversidad de tu ecosistema
+### 8.2 Mapa de diversidad de tu ecosistema
 
 Además de este resultado numérico para cada ecosistema, también será interesante que creéis un mapa de diversidad de todas las comunidades ocupadas por vuestro ecosistema. Esto os permitirá saber si, por ejemplo, los encinares del sur son más o menos diversos que los del norte. Para hacer esto bastará con que recortéis en Qgis la capa que hemos obtenido en esta práctica en formato vectorial usando como molde la delimitación de vuestro ecosistema que está contenido en la capa de ecosistemas descargada anteriormente. Es decir, tendréis que hacer una operación `clip` en la que la capa destino es la que contiene la información del índice de Shannon y la que hace de "molde" es el mapa de ecosistemas. Puedes hacer esto en QGIS con la función de recortar un raster con un fichero vectorial. 
 

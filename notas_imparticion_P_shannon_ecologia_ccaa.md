@@ -15,20 +15,19 @@
         - Conectan rápido con RStudio. Recuerdan instrucciones básicas
         - Conectan rápido con el directorio de trabajo.
         - No contestan a mis preguntas sobre agrupaciones de datos, aunque dicen que lo entienden todo.
+        - Nos quedamos en la importación de la capa de comunidades.shp
       - GM2
-        - 
+        - Conectamos rápido con lo que queremos hacer.
+        - Creo que esta sesión me sale mejor. Explico mejor los dos niveles de profundidad.
+        - Entienden bien los conceptos de agrupaciones por campos en las tablas.
+        - Nos quedamos en el paso de transformar presencias en presencias_23030
       
     - Lo que ellos responden a las preguntas de la sesión
+      - GM 1:
+        - 
+      - GM2: 
+        - 
     
-    - GM 1:
-    
-      - 
-    
-    - GM2: 
-    
-      - 
-      
-  
   - Sesión 2: 
   
     - Mi percepción:
@@ -49,4 +48,3 @@
   
 * **Tareas / Ideas para el siguiente curso:**
   - [ ] 
-  
