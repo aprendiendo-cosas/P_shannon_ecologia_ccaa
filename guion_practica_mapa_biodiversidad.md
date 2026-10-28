@@ -82,15 +82,11 @@ En este segundo nivel de complejidad explicaré con el apoyo de la pizarra y de 
 + Algunas funcionalidades de R relacionadas con los SIG. Es decir, cómo R puede ser un SIG muy potente.
 + Cómo se agrega la información numérica en las tablas para calcular el índice de Shannon.
 
-A continuación se muestra lo que se dibujó en la pizarra. Hay varias versiones:
-
-*Versión más pausada hecha el día de antes de la práctica en la pizarra de mi despacho...*
-
-![pizarra](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/2025_2026/imagenes/esquemas_pizarra/pizarra_despacho.jpg)
+El siguiente esquema muestra el flujo de trabajo con el nivel de profundidad intermedio
 
 
 
-
+![pizarra](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/main/imagenes/flujograma_nivel_2.png)
 
 
 
@@ -672,15 +668,17 @@ En el mapa resultante se pueden identificar varios patrones de distribución esp
 + Hemos identificado una serie de patrones visualmente. ¿cómo crees que podríamos cuantificarlos y comprobar si realmente existen?
 
 
+## 8. Preguntas sobre el desarrollo de la práctica
 
 
 
 
-## 8. Conexión de la práctica con el trabajo sobre tipos de ecosistemas
+
+## 9. Conexión de la práctica con el trabajo sobre tipos de ecosistemas
 
 El flujo de trabajo descrito arriba permite obtener un mapa de diversidad de Sierra Nevada asumiendo que cada polígono del mapa de vegetación es una comunidad. Esto nos permitirá estudiar patrones espaciales de cambio de la diversidad a escala de todo el territorio. Pero para nuestro trabajo tenemos dos objetivos:
 
-### 8.1 Creación de una tabla con los valores promedio de H en cada tipo de ecosistema
+### 9.1 Creación de una tabla con los valores promedio de H en cada tipo de ecosistema
 
 Para hacer esto tendremos que añadir al flujo de trabajo los siguientes pasos:
 
@@ -731,7 +729,7 @@ Ahora toca reflexionar sobre los resultados obtenidos:
 
 
 
-### 8.2 Mapa de diversidad de tu ecosistema
+### 9.2 Mapa de diversidad de tu ecosistema
 
 Además de este resultado numérico para cada ecosistema, también será interesante que creéis un mapa de diversidad de todas las comunidades ocupadas por vuestro ecosistema. Esto os permitirá saber si, por ejemplo, los encinares del sur son más o menos diversos que los del norte. Para hacer esto bastará con que recortéis en Qgis la capa que hemos obtenido en esta práctica en formato vectorial usando como molde la delimitación de vuestro ecosistema que está contenido en la capa de ecosistemas descargada anteriormente. Es decir, tendréis que hacer una operación `clip` en la que la capa destino es la que contiene la información del índice de Shannon y la que hace de "molde" es el mapa de ecosistemas. Puedes hacer esto en QGIS con la función de recortar un raster con un fichero vectorial. 
 
