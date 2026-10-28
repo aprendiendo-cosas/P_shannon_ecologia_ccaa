@@ -117,7 +117,7 @@ A partir de estas dos fuentes de datos obtendremos el índice de Shannon para ca
 
 ## 6. *Tercer nivel de complejidad*: traducción del flujo de trabajo a un programa de R
 
-En los siguientes bloques se muestra paso a paso cómo generar el mapa de diversidad de Sierra Nevada. Podrás ver el código de R que se usa en cada bloque. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2025_2026/geoinfo/shannon_sierra_nevada.R.zip) puedes descargar el programa de R completo.
+En los siguientes bloques se muestra paso a paso cómo generar el mapa de diversidad de Sierra Nevada. Podrás ver el código de R que se usa en cada bloque. 
 
 
 
@@ -280,7 +280,7 @@ presencias_23030 <- st_as_sf(presencias, coords = c("----", "----"),crs = 23030)
 
 ```R
 # Hacer un mapa sencillo para ver si tiene sentido geográficamente
-plot(st_geometry(presencia_23030), 
+plot(st_geometry(presencias_23030), 
      pch = 20,                  # Tipo de símbolo (puntos pequeños)
      cex = 0.1,                 # Tamaño de puntos
      col = "darkgreen",         # Color
@@ -307,9 +307,10 @@ plot(st_geometry(presencia_23030),
 #### 6.3.2 Procedimiento en R
 
 + **6.3.2.1.** Pistas
-  + Queremos importar a R la capa llamada `vegetación_snevada_23030.shp`
+  + Queremos importar a R la capa llamada `vegetacion_snevada_23030.shp`
   + Para ello necesitamos usar una función del paquete `sf` que ya hemos cargado en memoria.
   + La función que necesitamos es similar a `read_csv()` pero para capas geográficas.
+  + El objeto resultante se llamará `comunidades`
   + Puedes buscar en google o preguntar a tu IA favorita...
 <details>
 <summary>Intenta generar el código por tus medios. Si después de 5' no lo has conseguido haz click aquí</summary>
